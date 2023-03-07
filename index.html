@@ -4,17 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <title>Document</title>
+    <title>Expense Tracker</title>
 </head>
 <body>
+  <header>
+    <div class="logo">
+      <a href="#"><h1> Expense Tracker </h1></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+        <li><a href="#">Link 5</a></li>
+        <li><a href="#">Link 6</a></li>
+      </ul>
+    </nav>
+  </header>
+<div class="dashboard">
+  
+
+  
+  <div class="overall-expenses-chart">
 
     <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-    
     <script>
-    var xValues = ["Rent", "Grocery", "Spain", "USA", "Argentina"];
-    var yValues = [55, 49, 44, 24, 35];
-    var barColors = ["red", "green","blue","orange","brown"];
+    var xValues = ["Housing", "Grocery", "Transportation", "Entertainment", "Financial Expenses", "Others"];
+    var yValues = [500, 429, 213, 79, 35, 183];
+    var barColors = ["red", "green","blue","orange","brown", "pink"];
     
     new Chart("myChart", {
       type: "bar",
@@ -34,6 +54,16 @@
       }
     });
     </script>
-    
-    </body>
+  </div>
+  
+  <div class="current-transactions">
+
+
+  </div>
+
+
+</div>
+
+
+  </body>
 </html>

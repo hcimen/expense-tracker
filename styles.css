@@ -1,0 +1,149 @@
+
+:root {
+    --midnight-green: #004452ff;
+    --caribbean-current: #00667aff;
+    --blue-munsell: #0088a3ff;
+    --blue-green: #0096c7ff;
+    --pacific-cyan: #00b4d8ff;
+    --vivid-sky-blue: #48cae4ff;
+    --non-photo-blue: #90e0efff;
+    --non-photo-blue-2: #ade8f4ff;
+    --light-cyan: #caf0f8ff;
+}
+
+.box {
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+	margin: 20px;
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 200px;
+}
+
+#box1 {
+	background-color: var(--non-photo-blue);
+}
+
+#box2 {
+	background-color: var(--non-photo-blue);
+}
+
+#box3 {
+	background-color: var(--color3);
+}
+
+#box4 {
+	background-color: var(--non-photo-blue);
+}
+
+#box5 {
+	background-color: var(--non-photo-blue);
+}
+
+#box6 {
+	background-color: var(--non-photo-blue);
+}
+
+#box7 {
+	background-color: var(--non-photo-blue);
+}
+
+
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+img {
+  height: 800px;
+  width: auto;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+	.box {
+		width: 100%;
+		height: 150px;
+		line-height: 150px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.box {
+		width: 50%;
+		height: 250px;
+		line-height: 250px;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.box {
+		width: 33.33%;
+		height: 300px;
+		line-height: 300px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.box {
+		width: 25%;
+		height: 350px;
+		line-height: 350px;
+	}
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logo {
+    margin-bottom: 20px;
+  }
+  
+  nav ul {
+    flex-direction: column;
+  }
+  
+  nav li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
