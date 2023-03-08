@@ -11,77 +11,45 @@
     --light-cyan: #caf0f8ff;
 }
 
-.box {
-	width: 200px;
-	height: 200px;
-	display: inline-block;
-	margin: 20px;
-	color: white;
-	font-size: 24px;
-	font-weight: bold;
-	text-align: center;
-	line-height: 200px;
-}
-
-#box1 {
-	background-color: var(--non-photo-blue);
-}
-
-#box2 {
-	background-color: var(--non-photo-blue);
-}
-
-#box3 {
-	background-color: var(--color3);
-}
-
-#box4 {
-	background-color: var(--non-photo-blue);
-}
-
-#box5 {
-	background-color: var(--non-photo-blue);
-}
-
-#box6 {
-	background-color: var(--non-photo-blue);
-}
-
-#box7 {
-	background-color: var(--non-photo-blue);
+body{
+  text-align: left;
+  background-color: var(--non-photo-blue-2);
 }
 
 
-
-
-header {
-  display: flex;
+.header {
+  display: inline-block;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
+  background-color: var(--light-cyan);
+  color: var(--caribbean-current);
+  font-size: 5vw;
+  border-color: var(--blue-green);
+  border: solid;
+  border-width: 10px;
+  padding: 5%;
+  margin: 5%;
 }
 
-img {
-  height: 800px;
-  width: auto;
+.header a{
+  text-decoration:  none;
+  color: var(--caribbean-current);
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
+
+.expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction, .footer {
+  background-color: var(--light-cyan);
+  color: var(--caribbean-current);
+  font-size: 6vw;
+  border-color: var(--blue-green);
+  border: solid;
+  border-width: 10px;
+  padding: 5%;
+  margin: 5%;
 }
 
-nav li {
-  margin-right: 20px;
-}
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-}
+
 
 
 

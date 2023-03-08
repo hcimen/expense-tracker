@@ -5,38 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/1f172719e9.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>Expense Tracker</title>
 </head>
+
 <body>
-  <header>
-    <div class="logo">
-      <a href="#"><h1> Expense Tracker </h1></a>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-        <li><a href="#">Link 4</a></li>
-        <li><a href="#">Link 5</a></li>
-        <li><a href="#">Link 6</a></li>
-      </ul>
-    </nav>
-  </header>
-<div class="dashboard">
-  
+  <div class="header" id="header">
+    <div class="logo" id="logo">
+      <i class="fa fa-comments-dollar"></i>
+      <a href="#"> <i class="fa-sharp fa-solid fa-chart-mixed"></i> EXPENSE TRACKER </a>
+      <i class="fa fa-comments-dollar"></i>
+    </div> <br>
+    <div class="headerLinks" id="headerLinks"></div>
+      <a href="#"> <i class="fa fa-house"></i> Home </a> <br>
+      <a href="#"> <i class="fa-light fa-solid fa-scale-unbalanced"></i> Income & Expense </a> <br>
+      <a href="#"> <i class="fa-sharp fa-regular fa-flag"> </i>  Budget Reports </a> <br>
+      <a href="#"> <i class="fa fa-sliders"></i> Settings </a> <br>
+      <a href="#"> <i class="fa-sharp fa-solid fa-person-through-window"></i> Log Out </a>
+  </div>
 
-  
-  <div class="overall-expenses-chart">
-
-    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+	<div class="expenseTypeGraph" id="expenseTypeGraph">Expense Type Graph
+    <canvas id="expenseType" style="width:100%;max-width:600px"></canvas>
     <script>
     var xValues = ["Housing", "Grocery", "Transportation", "Entertainment", "Financial Expenses", "Others"];
     var yValues = [500, 429, 213, 79, 35, 183];
     var barColors = ["red", "green","blue","orange","brown", "pink"];
     
-    new Chart("myChart", {
+    new Chart("expenseType", {
       type: "bar",
       data: {
         labels: xValues,
@@ -49,21 +45,165 @@
         legend: {display: false},
         title: {
           display: true,
-          text: "Overall Expenses"
+          text: "Expenses by type"
         }
       }
     });
     </script>
   </div>
+	<div class="overallExpenses" id="overallExpenses">Overall Expenses 
+    <canvas id="overall" style="width:100%;max-width:600px"></canvas>
+
+    <script>
+      var ctx = document.getElementById('overall').getContext('2d');
+		var chart = new Chart(ctx, {
+			type: 'doughnut',
+			data: {
+				labels: ['Food', 'Housing', 'Transportation', 'Entertainment', 'Other'],
+				datasets: [{
+					data: [300, 500, 200, 100, 150],
+					backgroundColor: [
+						'rgba(255, 99, 132, 0.2)',
+						'rgba(54, 162, 235, 0.2)',
+						'rgba(255, 206, 86, 0.2)',
+						'rgba(75, 192, 192, 0.2)',
+						'rgba(153, 102, 255, 0.2)'
+					],
+					borderColor: [
+						'rgba(255, 99, 132, 1)',
+						'rgba(54, 162, 235, 1)',
+						'rgba(255, 206, 86, 1)',
+						'rgba(75, 192, 192, 1)',
+						'rgba(153, 102, 255, 1)'
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				title: {
+					display: true,
+					text: 'Expenses by Type'
+				}
+			}
+		});
+
+    function changeData() {
+			chart.data.datasets[0].data = [150, 300, 100, 50, 75];
+			chart.update();
+		}
+
+    </script>
+  </div>
+	<div class="incomeVsExpenses" id="incomeVsExpenses">Income vs Expenses <br>
+  <button onclick="changeData()">Change Data </button>
+
+  <canvas id="income-expenses" style="width:100%;max-width:600px"></canvas>
   
-  <div class="current-transactions">
+  <script>
+  var ctx = document.getElementById('income-expenses').getContext('2d');
+  var chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+      datasets: [{
+        label: 'Income',
+        data: [2000, 3000, 2500, 4000, 3500, 5000],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }, {
+        label: 'Expenses',
+        data: [1500, 2000, 1800, 2500, 2200, 3000, 3850],
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+</script>
+
+  </div>
+
+	<div class="largeGraph" id="largeGraph" > Detailed Graph 
+    <canvas id="largeGraphic" style="width:100%;max-width:600px"></canvas>
+    <script>
+      var ctx = document.getElementById('largeGraphic').getContext('2d');
+var chart = new Chart(ctx, {
+	type: 'bar',
+	data: {
+		labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+		datasets: [{
+			label: 'Income',
+			data: [2200, 2500, 1800, 2000, 2200, 2300, 2400, 2100, 1700, 1900, 2800, 2200],
+			backgroundColor: 'rgba(54, 162, 235, 0.2)',
+			borderColor: 'rgba(54, 162, 235, 1)',
+			borderWidth: 1
+		}, {
+			label: 'Expenses',
+			data: [1900, 1600, 1500, 2200, 1800, 1500, 1600, 2500, 1600, 1300, 1800, 1500],
+			backgroundColor: 'rgba(255, 99, 132, 0.2)',
+			borderColor: 'rgba(255, 99, 132, 1)',
+			borderWidth: 1
+		}, {
+			type: 'line',
+			label: 'Difference',
+			data: [300, 900, 300, 100, 400, 800, 100, 1100, 800, 600, 300, 1300],
+			fill: false,
+			borderColor: 'rgba(75, 192, 192, 1)',
+			borderWidth: 2,
+			pointRadius: 3,
+			pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+			pointHoverRadius: 5,
+			pointHoverBackgroundColor: 'rgba(75, 192, 192, 1)'
+		}]
+	},
+	options: {
+		responsive: true,
+		maintainAspectRatio: false,
+		scales: {
+			xAxes: [{
+				display: true,
+				ticks: {
+					autoSkip: true,
+					maxTicksLimit: 3
+				}
+			}],
+			yAxes: [{
+				display: true,
+				position: 'left',
+				id: 'y-axis-1'
+			}, {
+				display: true,
+				position: 'right',
+				id: 'y-axis-2',
+				gridLines: {
+					drawOnChartArea: false
+				}
+			}]
+		}
+	}
+});
+    </script>
+
 
 
   </div>
 
 
-</div>
+  <div class="addTransaction" id="addTransaction"> Add Quick Transaction 
+    
+  </div>
+	<div class="footer" id="footer"> Footer </div>
 
-
-  </body>
+</body>
 </html>
