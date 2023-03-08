@@ -26,11 +26,11 @@
   </div>
 
 	<div class="expenseTypeGraph" id="expenseTypeGraph">Expense Type Graph
-    <canvas id="expenseType" style="width:100%;max-width:600px"></canvas>
+    <canvas id="expenseType" style="width:100%;"></canvas>
     <script>
     var xValues = ["Housing", "Grocery", "Transportation", "Entertainment", "Financial Expenses", "Others"];
-    var yValues = [500, 429, 213, 79, 35, 183];
-    var barColors = ["red", "green","blue","orange","brown", "pink"];
+    var yValues = [500, 429, 213, 79, 435, 183];
+    var barColors = ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)","rgba(255, 206, 86, 0.2)","rgba(75, 192, 192, 0.2)","rgba(153, 102, 255, 0.2)", "rgba(255, 99, 132, 0.2)"];
     
     new Chart("expenseType", {
       type: "bar",
@@ -52,7 +52,7 @@
     </script>
   </div>
 	<div class="overallExpenses" id="overallExpenses">Overall Expenses 
-    <canvas id="overall" style="width:100%;max-width:600px"></canvas>
+    <canvas id="overall" style="width:100%"></canvas>
 
     <script>
       var ctx = document.getElementById('overall').getContext('2d');
@@ -97,7 +97,7 @@
 	<div class="incomeVsExpenses" id="incomeVsExpenses">Income vs Expenses <br>
   <button onclick="changeData()">Change Data </button>
 
-  <canvas id="income-expenses" style="width:100%;max-width:600px"></canvas>
+  <canvas id="income-expenses" style="width:100%"></canvas>
   
   <script>
   var ctx = document.getElementById('income-expenses').getContext('2d');
@@ -135,7 +135,7 @@
   </div>
 
 	<div class="largeGraph" id="largeGraph" > Detailed Graph 
-    <canvas id="largeGraphic" style="width:100%;max-width:600px"></canvas>
+    <canvas id="largeGraphic" style="width:100%"></canvas>
     <script>
       var ctx = document.getElementById('largeGraphic').getContext('2d');
 var chart = new Chart(ctx, {
@@ -201,7 +201,7 @@ var chart = new Chart(ctx, {
 
 
   <div class="addTransaction" id="addTransaction"> Add Quick Transaction 
-    
+
   </div>
 	<div class="footer" id="footer"> Footer </div>
 
