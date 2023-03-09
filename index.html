@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/1f172719e9.js" crossorigin="anonymous"></script>
+    <script defer src="script.js"></script>
+	<script src="https://kit.fontawesome.com/1f172719e9.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>Expense Tracker</title>
 </head>
@@ -17,7 +18,10 @@
       <a href="#"> <i class="fa-sharp fa-solid fa-chart-mixed"></i> EXPENSE TRACKER </a>
       <i class="fa fa-comments-dollar"></i>
     </div> <br>
-    <div class="headerLinks" id="headerLinks"></div>
+	
+	<div class="headerDropDown"> <a onclick="myFunction()"> <i class="fa-solid fa-circle-chevron-down"> </i> Show/Hide Menu </a> </div>
+    
+	<div class="headerLinks" id="headerLinks"></div>
       <a href="#"> <i class="fa fa-house"></i> Home </a> <br>
       <a href="#"> <i class="fa-light fa-solid fa-scale-unbalanced"></i> Income & Expense </a> <br>
       <a href="#"> <i class="fa-sharp fa-regular fa-flag"> </i>  Budget Reports </a> <br>
@@ -200,8 +204,39 @@ var chart = new Chart(ctx, {
   </div>
 
 
-  <div class="addTransaction" id="addTransaction"> Add Quick Transaction 
+  <div class="addTransaction" id="addTransaction"> Add Quick Transaction <br>
+	<form action="/action_page.php">
+	
+		<p> 1. Please choose type of transaction </p>
+		<input type="radio" id="income" name="expenseType" value="income">
+		<label for="income">Income</label><br>
+		<input type="radio" id="expense" name="expenseType" value="expense">
+		<label for="expense">Expense</label><br>
+		<input type="radio" id="transfer" name="expenseType" value="transfer">
+		<label for="transfer">Transfer Between Accounts </label><br><br>
 
+		<label for="amount"> 2. Transaction Amount:</label>
+		<input type="number" id="amount" name="amount" value="$"><br>
+
+		<p> 3. Please choose account for transaction </p>
+		<input type="radio" id="credit1" name="account" value="credit1">
+		<label for="credit1"> Credit Card </label><br>
+		<input type="radio" id="saving1" name="account" value="saving1">
+		<label for="saving1">Savings Account</label><br>
+		<input type="radio" id="checking1" name="account" value="checking1">
+		<label for="checking1">Checking Account </label><br><br>
+
+		<p> 4. Withdraw or Deposit Fund </p>
+		<input type="radio" id="withdraw" name="withdrawOrDeposit" value="withdraw">
+		<label for="withdraw">Withdraw (-) </label><br>
+		<input type="radio" id="deposit" name="withdrawOrDeposit" value="deposit">
+		<label for="deposit">Deposit (+) </label><br>
+
+		<p> 5. Choose categ </p>
+
+		
+		<input type="submit" value="Submit">
+	  </form> 
   </div>
 	<div class="footer" id="footer"> Footer </div>
 

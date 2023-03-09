@@ -18,7 +18,7 @@ body{
 
 
 .header {
-  display: inline-block;
+  display: block;
   justify-content: space-between;
   align-items: center;
   background-color: var(--light-cyan);
@@ -29,13 +29,24 @@ body{
   border-width: 10px;
   padding: 5%;
   margin: 5%;
+  line-height: 2;
 }
 
 .header a{
   text-decoration:  none;
   color: var(--caribbean-current);
+  
 }
 
+.header .logo{
+  display: flex;
+  justify-content: center;
+}
+
+.headerDropDown{
+  display: flex;
+  justify-content: flex-end;
+}
 
 .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction, .footer {
   background-color: var(--light-cyan);
@@ -49,7 +60,10 @@ body{
 }
 
 
+.addTransaction{
+  font-size: 4vw;
 
+}
 
 
 
