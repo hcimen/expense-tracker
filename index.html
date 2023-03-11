@@ -12,23 +12,25 @@
 </head>
 
 <body>
-  <div class="header" id="header">
-    <div class="logo" id="logo">
-      <i class="fa fa-comments-dollar"></i>
-      <a href="#"> <i class="fa-sharp fa-solid fa-chart-mixed"></i> EXPENSE TRACKER </a>
-      <i class="fa fa-comments-dollar"></i>
-    </div> <br>
-	
-	<div class="headerDropDown"> <a onclick="myFunction()"> <i class="fa-solid fa-circle-chevron-down"> </i> Show/Hide Menu </a> </div>
-    
-	<div class="headerLinks" id="headerLinks"></div>
-      <a href="#"> <i class="fa fa-house"></i> Home </a> <br>
-      <a href="#"> <i class="fa-light fa-solid fa-scale-unbalanced"></i> Income & Expense </a> <br>
-      <a href="#"> <i class="fa-sharp fa-regular fa-flag"> </i>  Budget Reports </a> <br>
-      <a href="#"> <i class="fa fa-sliders"></i> Settings </a> <br>
+<div class="header" id="header">
+	<div class="logoWithHamburger" id="logoWithHamburger">
+		<div class="logo" id="logo">
+		<i class="fa fa-comments-dollar"></i>
+		<a href="#"> <i class="fa-sharp fa-solid fa-chart-mixed"></i> EXPENSE TRACKER </a>
+		<i class="fa fa-comments-dollar"></i>
+		</div>
+		
+		<div class="headerDropDown"> <a href="#" onclick="myFunction()"> <i class="fa-solid fa-bars"></i></a> </div>
+	</div>
+	<div class="headerLinks" id="headerLinks">
+      <a href="#"> <i class="fa fa-house"></i> Home </a>
+      <a href="#"> <i class="fa-light fa-solid fa-scale-unbalanced"></i> Income & Expense </a> 
+      <a href="#"> <i class="fa-sharp fa-regular fa-flag"> </i>  Budget Reports </a> 
+      <a href="#"> <i class="fa fa-sliders"></i> Settings </a>
       <a href="#"> <i class="fa-sharp fa-solid fa-person-through-window"></i> Log Out </a>
   </div>
-
+</div> 
+<div class="mainBody" id="mainBody">
 	<div class="expenseTypeGraph" id="expenseTypeGraph">Expense Type Graph
     <canvas id="expenseType" style="width:100%;"></canvas>
     <script>
@@ -55,8 +57,48 @@
     });
     </script>
   </div>
-	<div class="overallExpenses" id="overallExpenses">Overall Expenses 
-    <canvas id="overall" style="width:100%"></canvas>
+	
+	<div class="incomeVsExpenses" id="incomeVsExpenses">Income vs Expenses <br>
+
+  <canvas id="income-expenses" style="width:100%"></canvas>
+  
+  <script>
+  var ctx = document.getElementById('income-expenses').getContext('2d');
+  var chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+      datasets: [{
+        label: 'Income',
+        data: [2000, 3000, 2500, 4000, 3500, 5000],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }, {
+        label: 'Expenses',
+        data: [1500, 2000, 1800, 2500, 2200, 3000, 3850],
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+</script>
+
+  </div>
+
+  <div class="overallExpenses" id="overallExpenses">Overall Expenses 
+    <canvas id="overall" style="width:100%; max-height: fit-content;"></canvas>
 
     <script>
       var ctx = document.getElementById('overall').getContext('2d');
@@ -98,45 +140,6 @@
 
     </script>
   </div>
-	<div class="incomeVsExpenses" id="incomeVsExpenses">Income vs Expenses <br>
-  <button onclick="changeData()">Change Data </button>
-
-  <canvas id="income-expenses" style="width:100%"></canvas>
-  
-  <script>
-  var ctx = document.getElementById('income-expenses').getContext('2d');
-  var chart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-      datasets: [{
-        label: 'Income',
-        data: [2000, 3000, 2500, 4000, 3500, 5000],
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-        borderColor: 'rgba(54, 162, 235, 1)',
-        borderWidth: 1
-      }, {
-        label: 'Expenses',
-        data: [1500, 2000, 1800, 2500, 2200, 3000, 3850],
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255, 99, 132, 1)',
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-        }]
-      }
-    }
-  });
-
-</script>
-
-  </div>
 
 	<div class="largeGraph" id="largeGraph" > Detailed Graph 
     <canvas id="largeGraphic" style="width:100%"></canvas>
@@ -173,7 +176,7 @@ var chart = new Chart(ctx, {
 	},
 	options: {
 		responsive: true,
-		maintainAspectRatio: false,
+		maintainAspectRatio: true,
 		scales: {
 			xAxes: [{
 				display: true,
@@ -216,7 +219,7 @@ var chart = new Chart(ctx, {
 		<label for="transfer">Transfer Between Accounts </label><br><br>
 
 		<label for="amount"> 2. Transaction Amount:</label>
-		<input type="number" id="amount" name="amount" value="$"><br>
+		<input type="number" id="amount" name="amount" value=""><br>
 
 		<p> 3. Please choose account for transaction </p>
 		<input type="radio" id="credit1" name="account" value="credit1">
@@ -232,12 +235,26 @@ var chart = new Chart(ctx, {
 		<input type="radio" id="deposit" name="withdrawOrDeposit" value="deposit">
 		<label for="deposit">Deposit (+) </label><br>
 
-		<p> 5. Choose categ </p>
+		<p> 5. Choose a category for your transaction </p>
+		<input type="checkbox" id="housing" name="category1" value="housing">
+		<label for="housing"> Housing </label><br>
+		<input type="checkbox" id="transportation " name="category2" value="transportation">
+		<label for="transportation"> Transportation</label><br>
+		<input type="checkbox" id="grocery" name="category3" value="grocery">
+		<label for="grocery"> Grocery</label><br>
+		<input type="checkbox" id="utilities" name="category4" value="utilities">
+		<label for="utilities"> Utilities </label><br>
+		<input type="checkbox" id="insurance " name="category5" value="insurance">
+		<label for="insurance"> Insurance</label><br>
+		<input type="checkbox" id="health" name="category6" value="health">
+		<label for="health"> Medical & Healthcare </label><br>
 
 		
 		<input type="submit" value="Submit">
 	  </form> 
   </div>
+
+</div>
 	<div class="footer" id="footer"> Footer </div>
 
 </body>
