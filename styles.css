@@ -22,7 +22,7 @@ body{
   flex-direction: column;
   background-color: var(--light-cyan);
   color: var(--caribbean-current);
-  font-size: 5vw;
+  font-size: 3vw;
   border-color: var(--blue-green);
   border: solid;
   border-width: 10px;
@@ -76,7 +76,7 @@ body{
    
 }
 
-.expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction, .footer {
+.expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction {
   background-color: var(--light-cyan);
   color: var(--caribbean-current);
   font-size: 4vw;
@@ -96,6 +96,28 @@ body{
   text-align: left;
 }
 
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: var(--light-cyan);
+  color: var(--caribbean-current);
+  font-size: 2vw;
+  border-color: var(--blue-green);
+  border: solid;
+  border-width: 10px;
+  padding: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.socialMedia{
+  display: block;
+  justify-content: space-around;
+}
+
 
 @media only screen and (max-width: 479px) {
 	.header{
@@ -103,7 +125,7 @@ body{
     height: auto;
   }
 
-  .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction, .footer {
+  .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction {
     width: 100%;
     height: auto;
 	}
@@ -120,7 +142,7 @@ body{
     height: auto;
   }
 
-  .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction, .footer {
+  .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction {
     width: 100%;
     height: auto;
 	}
@@ -151,7 +173,7 @@ body{
     flex-direction: row;
   }
 
-  .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction, .footer {
+  .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction {
     width: 35%;
     height: auto;
 	}
@@ -182,7 +204,7 @@ body{
     flex-direction: row;
   }
 
-  .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction, .footer {
+  .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction {
     width: 30%;
     height: auto;
 	}
@@ -212,7 +234,7 @@ body{
     flex-direction: row;
   }
 
-  .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction, .footer {
+  .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction{
     width: 30%;
     height: auto;
 	}
