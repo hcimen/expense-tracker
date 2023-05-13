@@ -163,7 +163,7 @@ footer a:link, a:visited{
 
 footer a:hover, a:active {
   color: var(--caribbean-current);
-  background-color: var(--vivid-sky-blue)
+  background-color: var(--vivid-sky-blue);
   list-style-type: square;
 }
 
