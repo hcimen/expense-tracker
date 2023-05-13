@@ -16,7 +16,7 @@
 	<div class="logoWithHamburger" id="logoWithHamburger">
 		<div class="logo" id="logo">
 		<i class="fa fa-comments-dollar"></i>
-		<a href="#"> <i class="fa-sharp fa-solid fa-chart-mixed"></i> EXPENSE TRACKER </a>
+		<a href="index.html"> <i class="fa-sharp fa-solid fa-chart-mixed"></i> EXPENSE TRACKER </a>
 		<i class="fa fa-comments-dollar"></i>
 		</div>
 		
@@ -24,33 +24,13 @@
 	</div>
 	<nav class="headerLinks" id="headerLinks">
       <a href="index.html"> <i class="fa fa-house"></i> Home </a>
-      <a href="addTransaction.html"> <i class="fa-light fa-solid fa-scale-unbalanced"></i> Income & Expense </a> 
+      <a href="#"> <i class="fa-light fa-solid fa-scale-unbalanced"></i> Income & Expense </a> 
       <a href="#"> <i class="fa fa-sliders"></i> Settings </a>
       <a href="#"> <i class="fa-sharp fa-solid fa-person-through-window"></i> Log Out </a>
 	</nav>
 </header> 
-<main class="mainBody" id="mainBody">
-	<div class="expenseTypeGraph" id="expenseTypeGraph">Expense Type Graph
-		<canvas id="expenseType" style="width:100%; max-height: fit-content;"></canvas>
-		<script src="scripts/expenseType.js"> </script>
-  	</div> <br><br>
-	
-	<div class="incomeVsExpenses" id="incomeVsExpenses">Income vs Expenses <br>
-		<canvas id="income-expenses" style="width:100%; max-height: fit-content;"></canvas>
-		<script src="scripts/incomeVsExpenses.js"> </script>
-	</div>
 
-	<div class="overallExpenses" id="overallExpenses">Overall Expenses 
-		<canvas id="overall" style="height:50%;"></canvas>
-		<script src="scripts/overallExpenses.js">  </script>
-  	</div>
-
-	<div class="largeGraph" id="largeGraph" > Detailed Graph 
-		<canvas id="largeGraphic" style="width:100%; max-height: fit-content;"></canvas>
-		<script src="scripts/largeGraph.js"> </script>
-	</div>
-
-  <div class="addTransaction" id="addTransaction"> Add Quick Transaction <br>
+<div class="addTransaction" id="addTransactionMain"> Add Transaction <br>
 	<form action="#">
 	
 		<p> 1. Please choose type of transaction </p>
@@ -101,8 +81,6 @@
 		<input type="submit" value="SUBMIT">
 	  </form> 
   </div>
-
-</main>
 
 <footer class="footer" id="footer">  
 	 	<div> Quick Links 
