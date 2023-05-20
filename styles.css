@@ -88,9 +88,9 @@ body{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  flex: 1 0 auto;
+  flex:auto;
   height: auto;
-  width: 90%;
+  width: 100%;
 }
 
 .addTransaction{
@@ -248,7 +248,7 @@ footer a:hover, a:active {
   }
 
   .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph {
-    width: 45%;
+    width: 48.5%;
     height: auto;
 	}
   
