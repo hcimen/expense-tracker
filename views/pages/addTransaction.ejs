@@ -1,34 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="/styles/styles.css">
-		<script defer src="/scripts/script.js"></script>
-		<script src="https://kit.fontawesome.com/1f172719e9.js" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-		<title>Expense Tracker</title>
-	</head>
+<%- include('../partials/header') -%>
 
-<body>
-<header class="header" id="header">
-	<div class="logoWithHamburger" id="logoWithHamburger">
-		<div class="logo" id="logo">
-		<i class="fa fa-comments-dollar"></i>
-		<a href="/"> <i class="fa-sharp fa-solid fa-chart-mixed"></i> EXPENSE TRACKER </a>
-		<i class="fa fa-comments-dollar"></i>
-		</div>
-		
-		<div class="headerDropDown"> <a href="#" onclick="hideHamburger()"> <i class="fa-solid fa-bars"></i></a> </div>
-	</div>
-	<nav class="headerLinks" id="headerLinks">
-      <a href="/"> <i class="fa fa-house"></i> Home </a>
-      <a href="#"> <i class="fa-light fa-solid fa-scale-unbalanced"></i> Income & Expense </a> 
-      <a href="#"> <i class="fa fa-sliders"></i> Settings </a>
-      <a href="#"> <i class="fa-sharp fa-solid fa-person-through-window"></i> Log Out </a>
-	</nav>
-</header> 
+<%- include('../partials/navigation') -%>
 
 <div class="addTransaction" id="addTransactionMain"> Add Transaction <br>
 	<form action="#">
@@ -82,28 +54,4 @@
 	  </form> 
   </div>
 
-<footer class="footer" id="footer">  
-	 	<div> Quick Links 
-			<ul>
-				<a href=""><li> How it works?</li></a>
-				<a href=""><li> Recommendation </li></a>
-				<a href=""><li> About us </li></a>
-			</ul>
-		</div>
-		<div class="socialMedia"> Social Media <br><br>
-			<a href="https://github.com/hcimen"><i class="fa-brands fa-github"></i> </a>
-			<a href="https://www.facebook.com/CodeSquadOrg"><i class="fa-brands fa-facebook"></i></a>
-			<a href="https://www.linkedin.com/in/harun-cimen/"><i class="fa-brands fa-linkedin"></i></a>
-		</div>
-		<div>
-			<label for="contactUs"> Contact Us </label> <br><br>
-			<a href=""><li> Contact Form</li></a>
-			<a href=""><li> bostone@gmail.com</li></a>
-		</div> <br>
-		
-
-		
-</footer>
-
-</body>
-</html>
+  <%- include('../partials/footer') -%>

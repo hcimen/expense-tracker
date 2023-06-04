@@ -1,0 +1,212 @@
+[
+  {
+    "_id": 1,
+    "date": "2023-01-05",
+    "description": "ABC Corporation",
+    "transaction_type": "debit",
+    "category": "Auto & Transport",
+    "account_name": "savings",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 2,
+    "date": "2023-01-08",
+    "description": "XYZ Services",
+    "transaction_type": "credit",
+    "category": "Bills & Utilities",
+    "account_name": "checking",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 3,
+    "date": "2023-01-10",
+    "description": "PQR Enterprises",
+    "transaction_type": "debit",
+    "category": "Entertainment",
+    "account_name": "credit",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 4,
+    "date": "2023-01-15",
+    "description": "LMN Cafe",
+    "transaction_type": "credit",
+    "category": "Food & Dining",
+    "account_name": "savings",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 5,
+    "date": "2023-01-18",
+    "description": "UVW Fitness",
+    "transaction_type": "debit",
+    "category": "Health & Fitness",
+    "account_name": "checking",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 6,
+    "date": "2023-01-20",
+    "description": "GHI Home Decor",
+    "transaction_type": "credit",
+    "category": "Home",
+    "account_name": "credit",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 7,
+    "date": "2023-01-22",
+    "description": "JKL Consulting",
+    "transaction_type": "debit",
+    "category": "Income",
+    "account_name": "savings",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 8,
+    "date": "2023-01-25",
+    "description": "MNO Investments",
+    "transaction_type": "credit",
+    "category": "Investment",
+    "account_name": "checking",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 9,
+    "date": "2023-01-28",
+    "description": "DEF Salon",
+    "transaction_type": "debit",
+    "category": "Personal Care",
+    "account_name": "credit",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 10,
+    "date": "2023-01-30",
+    "description": "QRS Pet Shop",
+    "transaction_type": "credit",
+    "category": "Pets",
+    "account_name": "savings",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 11,
+    "date": "2023-02-02",
+    "description": "LMN Grocery Store",
+    "transaction_type": "debit",
+    "category": "Food & Dining",
+    "account_name": "checking",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 12,
+    "date": "2023-02-05",
+    "description": "QRS Pharmacy",
+    "transaction_type": "debit",
+    "category": "Health & Fitness",
+    "account_name": "credit",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 13,
+    "date": "2023-02-08",
+    "description": "GHI Electronics",
+    "transaction_type": "credit",
+    "category": "Shopping",
+    "account_name": "savings",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 14,
+    "date": "2023-02-10",
+    "description": "DEF Entertainment",
+    "transaction_type": "debit",
+    "category": "Entertainment",
+    "account_name": "checking",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 15,
+    "date": "2023-02-15",
+    "description": "XYZ Travel Agency",
+    "transaction_type": "credit",
+    "category": "Travel",
+    "account_name": "credit",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 16,
+    "date": "2023-02-18",
+    "description": "PQR Auto Repair",
+    "transaction_type": "debit",
+    "category": "Auto & Transport",
+    "account_name": "savings",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 17,
+    "date": "2023-02-20",
+    "description": "ABC Insurance",
+    "transaction_type": "debit",
+    "category": "Bills & Utilities",
+    "account_name": "checking",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 18,
+    "date": "2023-02-22",
+    "description": "JKL Investments",
+    "transaction_type": "credit",
+    "category": "Investment",
+    "account_name": "credit",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 19,
+    "date": "2023-02-25",
+    "description": "MNO Hair Salon",
+    "transaction_type": "debit",
+    "category": "Personal Care",
+    "account_name": "savings",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 20,
+    "date": "2023-02-28",
+    "description": "UVW Home Improvement",
+    "transaction_type": "credit",
+    "category": "Home",
+    "account_name": "checking",
+    "labels": [],
+    "notes": ""
+  },
+  {
+    "_id": 21,
+    "date": "2023-03-01",
+    "description": "TUV Tax Consultancy",
+    "transaction_type": "debit",
+    "category": "Taxes",
+    "account_name": "credit",
+    "labels": [],
+    "notes": ""
+  }
+]
