@@ -1,0 +1,255 @@
+
+:root {
+    --midnight-green: #004452ff;
+    --caribbean-current: #00667aff;
+    --blue-munsell: #0088a3ff;
+    --blue-green: #0096c7ff;
+    --pacific-cyan: #00b4d8ff;
+    --vivid-sky-blue: #48cae4ff;
+    --non-photo-blue: #90e0efff;
+    --non-photo-blue-2: #ade8f4ff;
+    --light-cyan: #caf0f8ff;
+    --lightest:#e6ffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body{
+  text-align: left;
+  background-color: var(--light-cyan);
+}
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--lightest);
+  color: var(--caribbean-current);
+  font-size: 3vw;
+  border-color: var(--blue-green);
+  border: solid;
+  border-width: 5px;
+  line-height: 2;
+}
+
+.header a{
+  text-decoration:  none;
+  color: var(--caribbean-current);
+}
+
+.header .logo{
+  display: flex;
+  justify-content: center;
+  width: 98%;
+  padding: 1%;
+  text-align: center;
+}
+
+.logoWithHamburger{
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerLinks{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; 
+  font-size: 2.5vw;
+  padding-left: 2%;
+}
+
+.headerLinksNone{
+  display: none;
+}
+
+.headerDropDown{
+  display: flex;
+  justify-content: flex-end;
+  padding: 2%;
+}
+
+.mainBody{
+  display: flex;
+  flex-direction: column;
+}
+
+.expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction {
+  background-color: var(--lightest);
+  color: var(--caribbean-current);
+  font-size: 4vw;
+  border-color: var(--blue-green);
+  border: solid;
+  border-width: 5px;
+  padding: 1%;
+  margin: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  flex:auto;
+  height: auto;
+  width: 100%;
+}
+
+.addTransaction{
+  font-size: 3vw;
+  text-align: left;
+  padding-left: 5%;
+}
+
+.addTransaction p{
+  color: var(--midnight-green);
+}
+
+.addTransaction input[type=radio], [type=checkbox]{
+  cursor: pointer;
+  height: 2vw;
+  width: 2vw;
+}
+
+.addTransaction input[type=number]{
+  justify-content: space-around;
+  cursor: pointer;
+  height: 2vw;
+  width: 30vw;
+}
+
+.addTransaction input[type=submit]{
+  justify-content: space-around;
+  cursor: pointer;
+  height: 4vw;
+  width: 20vw;
+  background-color: var(--blue-munsell);
+  margin-left: 55%;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  font-size: 2vw;
+}
+
+#addTransactionMain{
+  height: auto;
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: var(--light-cyan);
+  color: var(--caribbean-current);
+  font-size: 2vw;
+  border-color: var(--blue-green);
+  border: solid;
+  border-width: 5px;
+  padding-left: 3%;
+  padding-top: 1%;
+  padding-right: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+
+footer a:link, a:visited{
+  color: var(--blue-munsell);
+  text-decoration: none;
+  cursor: help;
+  list-style-type: none;
+}
+
+footer a:hover, a:active {
+  color: var(--caribbean-current);
+  background-color: var(--vivid-sky-blue);
+  list-style-type: square;
+}
+
+.socialMedia{
+  display: block;
+  justify-content: space-between;
+}
+
+
+@media only screen and (max-width: 479px) {
+.headerDropDown{
+  display: flex;}
+
+}
+
+@media only screen and (min-width:480px) and (max-width: 767px) {
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  
+  .headerLinks{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .headerLinksNone{
+    display: none;
+    flex-direction: row;
+  }
+  
+  .mainBody{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+}
+
+@media only screen and (min-width:1024px) and (max-width: 1199px) {
+
+  .headerLinks{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .headerLinksNone{
+    display: none;
+    flex-direction: row;
+    overflow-wrap: normal;
+  }
+  
+  .mainBody{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph {
+    width: 40%;
+    height: auto;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .headerLinks{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .headerLinksNone{
+    display: none;
+    flex-direction: row;
+    overflow-wrap: normal;
+  }
+  
+  .mainBody{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph {
+    width: 48.5%;
+    height: auto;
+	}
+  
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/styles/styles.css">
+		<script defer src="/scripts/script.js"></script>
+		<script src="https://kit.fontawesome.com/1f172719e9.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+		<title>Expense Tracker</title>
+	</head>
+
+<body>
+<header class="header" id="header">
+	<div class="logoWithHamburger" id="logoWithHamburger">
+		<div class="logo" id="logo">
+		<i class="fa fa-comments-dollar"></i>
+		<a href="/"> <i class="fa-sharp fa-solid fa-chart-mixed"></i> EXPENSE TRACKER </a>
+		<i class="fa fa-comments-dollar"></i>
+		</div>
+		
+		<div class="headerDropDown"> <a href="#" onclick="hideHamburger()"> <i class="fa-solid fa-bars"></i></a> </div>
+	</div>
+	<nav class="headerLinks" id="headerLinks">
+      <a href="/"> <i class="fa fa-house"></i> Home </a>
+      <a href="#"> <i class="fa-light fa-solid fa-scale-unbalanced"></i> Income & Expense </a> 
+      <a href="#"> <i class="fa fa-sliders"></i> Settings </a>
+      <a href="#"> <i class="fa-sharp fa-solid fa-person-through-window"></i> Log Out </a>
+	</nav>
+</header> 
+
+<div class="addTransaction" id="addTransactionMain"> Add Transaction <br>
+	<form action="#">
+	
+		<p> 1. Please choose type of transaction </p>
+		<input type="radio" id="income" name="expenseType" value="income">
+		<label for="income">Income</label><br>
+		<input type="radio" id="expense" name="expenseType" value="expense">
+		<label for="expense">Expense</label><br>
+		<input type="radio" id="transfer" name="expenseType" value="transfer">
+		<label for="transfer">Transfer Between Accounts </label><br><br>
+
+		<div style="display: flex; align-items: center;">
+			<label style="color: var(--midnight-green);" for="amount">2. Transaction Amount:</label>
+			<input type="number" id="amount" name="amount" value="">
+		</div>
+		  
+		<!-- <p> 2. Transaction Amount: </p> <span>
+		<input type="number" id="amount" name="amount" value=""><br></span>
+		<label for="amount"></label> -->
+
+		<p> 3. Please choose account for transaction </p>
+		<input type="radio" id="credit1" name="account" value="credit1">
+		<label for="credit1"> Credit Card </label><br>
+		<input type="radio" id="saving1" name="account" value="saving1">
+		<label for="saving1">Savings Account</label><br>
+		<input type="radio" id="checking1" name="account" value="checking1">
+		<label for="checking1">Checking Account </label><br><br>
+
+		<p> 4. Withdraw or Deposit Fund </p>
+		<input type="radio" id="withdraw" name="withdrawOrDeposit" value="withdraw">
+		<label for="withdraw">Withdraw (-) </label><br>
+		<input type="radio" id="deposit" name="withdrawOrDeposit" value="deposit">
+		<label for="deposit">Deposit (+) </label><br>
+
+		<p> 5. Choose a category for your transaction </p>
+		<input type="checkbox" id="housing" name="category1" value="housing">
+		<label for="housing"> Housing </label><br>
+		<input type="checkbox" id="transportation " name="category2" value="transportation">
+		<label for="transportation"> Transportation</label><br>
+		<input type="checkbox" id="grocery" name="category3" value="grocery">
+		<label for="grocery"> Grocery</label><br>
+		<input type="checkbox" id="utilities" name="category4" value="utilities">
+		<label for="utilities"> Utilities </label><br>
+		<input type="checkbox" id="insurance " name="category5" value="insurance">
+		<label for="insurance"> Insurance</label><br>
+		<input type="checkbox" id="health" name="category6" value="health">
+		<label for="health"> Medical & Healthcare </label><br>
+
+		<input type="submit" value="SUBMIT">
+	  </form> 
+  </div>
+
+<footer class="footer" id="footer">  
+	 	<div> Quick Links 
+			<ul>
+				<a href=""><li> How it works?</li></a>
+				<a href=""><li> Recommendation </li></a>
+				<a href=""><li> About us </li></a>
+			</ul>
+		</div>
+		<div class="socialMedia"> Social Media <br><br>
+			<a href="https://github.com/hcimen"><i class="fa-brands fa-github"></i> </a>
+			<a href="https://www.facebook.com/CodeSquadOrg"><i class="fa-brands fa-facebook"></i></a>
+			<a href="https://www.linkedin.com/in/harun-cimen/"><i class="fa-brands fa-linkedin"></i></a>
+		</div>
+		<div>
+			<label for="contactUs"> Contact Us </label> <br><br>
+			<a href=""><li> Contact Form</li></a>
+			<a href=""><li> bostone@gmail.com</li></a>
+		</div> <br>
+		
+
+		
+</footer>
+
+</body>
+</html>
