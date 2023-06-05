@@ -8,6 +8,7 @@ router.route('/')
 router.route('/addTransaction')
     .get(siteCtrl.addTransaction)
 
-
+router.route('/transactions')
+    .get(siteCtrl.transactions)
 
     module.exports = router;

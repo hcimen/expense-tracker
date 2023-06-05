@@ -2,29 +2,45 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
-const userSchema = new Schema({
-    username: {
-    type: String,
+const transactionSchema = new Schema({
+    _id: {
+        type: String,
     },
 
-    email: {
-    type: String,
+    date: {
+        type: Date,
     },
 
-    password: {
-    type: String,
+    description: {
+        type: String,
     },
 
-    createdAt: {
-    type: Date,
-    default: Date.now
+    transaction_type: {
+        type: String,
+        enum: ['debit', 'credit'],
+    },  
+
+    amount: {
+        type: String,
     },
 
-});
+    category: {
+        type: String,
+    },
 
-const User = mongoose.model('User', userSchema);
+    notes: {
+        type: String,
+    },
 
-module.exports = User;
+    tags: {
+        type: String,
+    },
+
+}, { collection: 'transactions' });
+
+const Transaction = mongoose.model('Transaction', transactionSchema, 'transactions');
+
+module.exports = Transaction;
 
 /* userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate); */
