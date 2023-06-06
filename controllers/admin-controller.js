@@ -1,7 +1,7 @@
-const User = require('../models/user-model');
-const Transaction = require('../models/transaction-model');
+const { User, Transaction } = require('../models/user-model');
+const { ObjectId } = require('mongoose').Types;
 const passport = require('passport');
-const {v4: uuid} = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
   admin: (req, res) => {
@@ -18,39 +18,45 @@ module.exports = {
 
   create: (req, res) => {
     if (req.isAuthenticated()) {
-      const { date, description, amount, transaction_type, category, account_name, labels, notes} = req.body;
-      const newTransaction = new Transaction ({
-        _id: uuid(),
-        date:date,
-        description:description,
-        amount:amount,
-        transaction_type : transaction_type,
-        category : category,
-        account_name : account_name,
-        labels:labels,
-        notes:notes,        
+      const { date, description, amount, transaction_type, category, account_name, labels, notes } = req.body;
+      console.log("User ID is " + req.user.id);
+      const newTransaction = new Transaction({
+        date,
+        description,
+        amount,
+        transaction_type,
+        category,
+        account_name,
+        labels,
+        notes,
+        user_id:req.user.id
       });
-      newTransaction.save();
-      console.log(Transaction);
-      res.redirect('/');
-    } else {
-      console.log(req.body);
-      res.redirect('/user/register');
-    }
+  
+      newTransaction.save((err) => {
+        if (err) {
+          console.log(err);
+          return res.redirect('/user/addTransaction');
+        }
+        console.log('New transaction added:', newTransaction);
+      return res.redirect('/user/transactions');
+    });
+  } else {
+    res.redirect('/user/register');
+  }
   },
-
+    
   transactions: (req, res) => {
-  Transaction.find({}, (error, allTransactions) => {
-      if(error){
+    const userId = req.user.id;
+    console.log(userId);  
+    Transaction.find({ user_id: ObjectId(userId)}, (error, userTransactions) => {
+      if (error) {
         return error;
       } else {
-      console.log(allTransactions);
-      console.log(Transaction);
-      res.render('pages/transactions', { 
-          allTransactions : allTransactions});
+        res.render('pages/transactions', {
+          allTransactions: userTransactions
+        });
       }
-    }
-    )
+    });
   },
 
   authorization: (req, res) => {
@@ -80,7 +86,7 @@ module.exports = {
     const {username, password} = req.body;
     console.log(req.body);
     User.register(
-        {username: username}, 
+        {username: username},
         password, 
         (error, user) => {
         if(error) {

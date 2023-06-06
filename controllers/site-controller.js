@@ -1,5 +1,5 @@
 const { response } = require('express');
-const Transaction = require('../models/transaction-model');
+const { User, Transaction } = require('../models/user-model');
 const passport = require('passport');
 const express = require('express');
 

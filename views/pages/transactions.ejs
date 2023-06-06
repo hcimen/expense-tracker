@@ -21,7 +21,7 @@
 				</tr>
 				<% for (entry of allTransactions) { %>
 				<tr style="border: 1px solid black;">
-					<td> <%= entry.date.toLocaleDateString() %> </td>
+					<td> <%= entry.date %> </td>
 					<td> <%= entry.description %> </td>
 					<td> <%= entry.amount %> </td>
 					<td> <%= entry.transaction_type %> </td>
