@@ -8,5 +8,17 @@ module.exports = {
               res.render('pages/index')
     },
 
-    
+    google_get: passport.authenticate('google', {scope: ['openid', 'profile', 'email']}
+    ),
+
+    google_redirect_get: [
+        passport.authenticate('google', {failureRedirect: '/login'}),
+        function(req, res) {
+            if(req.user){
+            res.redirect('/user/overall')
+            } else {
+            res.redirect('/index');    
+            }            
+        },
+    ],
 }

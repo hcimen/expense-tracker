@@ -14,6 +14,9 @@ const userSchema = new Schema({
   password: {
     type: String,
   },
+  googleId:{
+    type:String,
+  },
   transactions: [
     {
       type: Schema.Types.ObjectId,
@@ -62,10 +65,10 @@ const Transaction = mongoose.model('Transaction', transactionSchema, 'transactio
 
 passport.use(User.createStrategy());
 
-/* passport.use(new GoogleStrategy({
+passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:4000/auth/google/transactions",
+    callbackURL: "http://localhost:4000/auth/google/overall",
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOrCreate({ googleId: profile.id }, function (err, user) {
@@ -73,7 +76,7 @@ passport.use(User.createStrategy());
     });
   }
 ));
- */
+
 passport.serializeUser(function(user, cb){
   process.nextTick(function(){
       cb(null, {id:user.id, username:user.username, name: user.displayName});
