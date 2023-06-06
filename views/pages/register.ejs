@@ -1,0 +1,43 @@
+<%- include('../partials/header') -%>
+
+<%- include('../partials/navigation') -%>
+
+<div class="addTransaction" id="addTransactionMain">
+
+	<div >
+		<h1>REGISTER</h1>
+		<form action="/user/register" method="POST">
+
+			<label for="username">Username: </label>
+    		<input type="text" name="username" id="username" placeholder="Username"> <br> <br>
+
+			<label for="password">Password: </label>
+    		<input type="password" name="password" id="password" placeholder="Password" minlength="10"> <br> <br> <br> 
+			
+			<button type="submit" id="Submit"> Submit </button>
+
+		</form>
+
+		<a href="/auth/google" role="button" target="_blank><button type="submit" id="" class="delete"> Google </button> </a>
+	</div>
+
+	<div >
+		<h1>LOGIN</h1>
+		<form action="/user/login" method="POST">
+
+			<label for="username">Username: </label>
+    		<input type="text" name="username" id="username" placeholder="Username"> <br> <br>
+
+			<label for="password">Password: </label>
+    		<input type="password" name="password" id="password" placeholder="Password" minlength="10"> <br> <br> <br> 
+			
+			<button type="submit" id="Submit"> Submit </button>
+
+		</form>
+
+		<a href="/auth/google" role="button" target="_blank><button type="submit" id="" class="delete"> Google </button> </a>
+	</div>
+
+</div>
+
+<%- include('../partials/footer') -%>

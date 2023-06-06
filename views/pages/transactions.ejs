@@ -5,10 +5,10 @@
 <div class="addTransaction" id="addTransactionMain"> All Transactions <br>
 
 
-<% for (entry of allTransactions) { %>
-	<div style="font-size: medium; border: solid; border-collapse: collapse; border-color: black; ">
+
+	<div >
 		<form action="#">
-			<table>
+			<table style="width:100%; font-size: large; border: solid; border-color:var(--caribbean-current); text-align: center;">
 				<tr>
 					<th> Date</th>
 					<th> Description </th>
@@ -19,8 +19,9 @@
 					<th> Labels </th>
 					<th> Notes </th>
 				</tr>
-				<tr>
-					<td> <%= entry.date %> </td>
+				<% for (entry of allTransactions) { %>
+				<tr style="border: 1px solid black;">
+					<td> <%= entry.date.toLocaleDateString() %> </td>
 					<td> <%= entry.description %> </td>
 					<td> <%= entry.amount %> </td>
 					<td> <%= entry.transaction_type %> </td>
@@ -29,10 +30,10 @@
 					<td> <%= entry.labels %> </td>
 					<td> <%= entry.notes %> </td>
 				</tr>
+				<% } %>	
 			</table>
 		</form>
 	</div>
-<% } %>	
 
 </div>
 

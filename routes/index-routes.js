@@ -6,6 +6,6 @@ const adminRoutes = require('./admin-routes');
 
 
 router.use('/', siteRoutes);
-router.use('/admin-console', adminRoutes);
+router.use('/user', adminRoutes);
 
 module.exports = router;

@@ -1,13 +1,13 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
+const passport = require('passport');
+const passportLocalMongoose = require('passport-local-mongoose');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const findOrCreate = require('mongoose-findorcreate');
 
 const userSchema = new Schema({
     username: {
-    type: String,
-    },
-
-    email: {
     type: String,
     },
 
@@ -15,25 +15,20 @@ const userSchema = new Schema({
     type: String,
     },
 
-    createdAt: {
-    type: Date,
-    default: Date.now
-    },
+    transactions: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Transaction',
+    }],
+  }, { collection: 'users' });
 
-});
+userSchema.plugin(passportLocalMongoose);
+userSchema.plugin(findOrCreate);
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema, 'users');
 
-module.exports = User;
+passport.use(User.createStrategy());
 
-/* userSchema.plugin(passportLocalMongoose);
-userSchema.plugin(findOrCreate); */
-
-
-
-/* passport.use(User.createStrategy());
-
-passport.use(new GoogleStrategy({
+/* passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
     callbackURL: "http://localhost:4000/auth/google/transactions",
@@ -44,7 +39,7 @@ passport.use(new GoogleStrategy({
     });
   }
 ));
-
+ */
 passport.serializeUser(function(user, cb){
     process.nextTick(function(){
         cb(null, {id:user.id, username:user.username, name: user.displayName});
@@ -55,5 +50,6 @@ passport.deserializeUser(function(user, cb){
     process.nextTick(function(){
         return cb (null, user);
     });
-}); */
+});
 
+module.exports = User;

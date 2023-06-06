@@ -3,78 +3,11 @@
 <%- include('../partials/navigation') -%>
 
 <main class="mainBody" id="mainBody">
-	<div class="expenseTypeGraph" id="expenseTypeGraph">Expense Type Graph
-		<canvas id="expenseType" style="width:100%; max-height: fit-content;"></canvas>
-		<script src="/scripts/expenseType.js"> </script>
-  	</div> <br><br>
+<div>
+	<p style="font-size:xx-large">There will be a index page here. </p>
 	
-	<div class="incomeVsExpenses" id="incomeVsExpenses">Income vs Expenses <br>
-		<canvas id="income-expenses" style="width:100%; max-height: fit-content;"></canvas>
-		<script src="/scripts/incomeVsExpenses.js"> </script>
-	</div>
-
-	<div class="overallExpenses" id="overallExpenses">Overall Expenses 
-		<canvas id="overall" style="height:100%;"></canvas>
-		<script src="/scripts/overallExpenses.js">  </script>
-  	</div>
-
-	<div class="largeGraph" id="largeGraph" > Detailed Graph 
-		<canvas id="largeGraphic" style="width:100%; max-height: fit-content;"></canvas>
-		<script src="/scripts/largeGraph.js"> </script>
-	</div>
-
-  <div class="addTransaction" id="addTransaction"> Add Quick Transaction <br>
-	<form action="#">
-	
-		<p> 1. Please choose type of transaction </p>
-		<input type="radio" id="income" name="expenseType" value="income">
-		<label for="income">Income</label><br>
-		<input type="radio" id="expense" name="expenseType" value="expense">
-		<label for="expense">Expense</label><br>
-		<input type="radio" id="transfer" name="expenseType" value="transfer">
-		<label for="transfer">Transfer Between Accounts </label><br><br>
-
-		<div style="display: flex; align-items: center;">
-			<label style="color: var(--midnight-green);" for="amount">2. Transaction Amount:</label>
-			<input type="number" id="amount" name="amount" value="">
-		</div>
-		  
-		<!-- <p> 2. Transaction Amount: </p> <span>
-		<input type="number" id="amount" name="amount" value=""><br></span>
-		<label for="amount"></label> -->
-
-		<p> 3. Please choose account for transaction </p>
-		<input type="radio" id="credit1" name="account" value="credit1">
-		<label for="credit1"> Credit Card </label><br>
-		<input type="radio" id="saving1" name="account" value="saving1">
-		<label for="saving1">Savings Account</label><br>
-		<input type="radio" id="checking1" name="account" value="checking1">
-		<label for="checking1">Checking Account </label><br><br>
-
-		<p> 4. Withdraw or Deposit Fund </p>
-		<input type="radio" id="withdraw" name="withdrawOrDeposit" value="withdraw">
-		<label for="withdraw">Withdraw (-) </label><br>
-		<input type="radio" id="deposit" name="withdrawOrDeposit" value="deposit">
-		<label for="deposit">Deposit (+) </label><br>
-
-		<p> 5. Choose a category for your transaction </p>
-		<input type="checkbox" id="housing" name="category1" value="housing">
-		<label for="housing"> Housing </label><br>
-		<input type="checkbox" id="transportation " name="category2" value="transportation">
-		<label for="transportation"> Transportation</label><br>
-		<input type="checkbox" id="grocery" name="category3" value="grocery">
-		<label for="grocery"> Grocery</label><br>
-		<input type="checkbox" id="utilities" name="category4" value="utilities">
-		<label for="utilities"> Utilities </label><br>
-		<input type="checkbox" id="insurance " name="category5" value="insurance">
-		<label for="insurance"> Insurance</label><br>
-		<input type="checkbox" id="health" name="category6" value="health">
-		<label for="health"> Medical & Healthcare </label><br>
-
-		<input type="submit" value="SUBMIT">
-	  </form> 
-  </div>
-
+	<p style="font-size:xx-large"> I need to move old version, because graphs should be in authorized part of website. </p>
+</div>
 </main>
 
 <%- include('../partials/footer') -%>
