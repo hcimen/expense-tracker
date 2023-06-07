@@ -68,7 +68,7 @@ passport.use(User.createStrategy());
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "https://long-erin-slug-tie.cyclic.app/auth/google/user/overall",
+    callbackURL: "https://long-erin-slug-tie.cyclic.app/auth/google/overall",
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOrCreate({ googleId: profile.id }, function (err, user) {
