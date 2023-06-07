@@ -12,7 +12,7 @@ module.exports = {
     ),
 
     google_redirect_get: [
-        passport.authenticate('google', {failureRedirect: '/login'}),
+        passport.authenticate('google', {failureRedirect: '/index'}),
         function(req, res) {
             if(req.user){
             res.redirect('/user/overall')
