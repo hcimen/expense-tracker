@@ -92,4 +92,5 @@ passport.deserializeUser(function(user, cb){
 module.exports = {
   User,
   Transaction,
+  userSchema
 };
