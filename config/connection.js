@@ -12,4 +12,6 @@ async function main() {
   await mongoose.model('User').findOne();
 };
 
+main();
+
 module.exports = mongoose;
