@@ -61,9 +61,6 @@ const transactionSchema = new Schema({
 
 const User = mongoose.model('User', userSchema, 'users');
 
-
-main().catch(err => console.log(err));
-
 async function main() {
   await mongoose.connect(`${process.env.DB_URL}`);
 
