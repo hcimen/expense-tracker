@@ -61,6 +61,19 @@ const transactionSchema = new Schema({
 
 const User = mongoose.model('User', userSchema, 'users');
 
+
+main().catch(err => console.log(err));
+
+async function main() {
+  await mongoose.connect(`${process.env.DB_URL}`);
+
+  mongoose.model('User', userSchema);
+  
+  await mongoose.model('User').findOne();
+};
+
+main();
+
 const Transaction = mongoose.model('Transaction', transactionSchema, 'transactions');
 
 passport.use(User.createStrategy());

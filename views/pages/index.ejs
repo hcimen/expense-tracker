@@ -2,11 +2,52 @@
 
 <%- include('../partials/navigation') -%>
 
-<main class="mainBody" id="mainBody">
-<div>
-	<p style="font-size:xx-large">There will be a index page here. </p>
+<main>
+<div class="addTransaction" id="mainBody">
+	<div >
+		<h1>LOGIN</h1>
+		<form action="/user/login" method="POST">
+
+			<label for="username">Username: </label>
+    		<input type="text" name="username" id="username" placeholder="Username"> 
+
+			<label for="password">Password: </label>
+    		<input type="password" name="password" id="password" placeholder="Password" minlength="10"> 
+			
+			<button type="submit" id="Submit"> Submit </button>
+		</form>
+		<a href="/auth/google" role="button" target="_blank><button type="submit" id="" class="delete"> Google </button> </a>
+	</div>
 	
-	<p style="font-size:xx-large"> I need to move old version, because graphs should be in authorized part of website. </p>
+
+  <div class="expenseTypeGraph" id="expenseTypeGraph">
+	<div>Expense Type Graph
+		<canvas id="expenseType" style="width:100%; max-height: fit-content;"></canvas>
+		<script src="/scripts/expenseType.js"> </script>
+  	</div>
+	<div>
+		<p>
+			Explanation about Expense Type Graph
+		</p>
+	</div>
+  </div>
+	<div class="incomeVsExpenses" id="incomeVsExpenses">Income vs Expenses <br>
+		<canvas id="income-expenses" style="width:100%; max-height: fit-content;"></canvas>
+		<script src="/scripts/incomeVsExpenses.js"> </script>
+	</div>
+
+	<div class="overallExpenses" id="overallExpenses">Overall Expenses 
+		<canvas id="overall" style="height:100%;"></canvas>
+		<script src="/scripts/overallExpenses.js">  </script>
+  	</div>
+
+	<div class="largeGraph" id="largeGraph" > Detailed Graph 
+		<canvas id="largeGraphic" style="width:100%; max-height: fit-content;"></canvas>
+		<script src="/scripts/largeGraph.js"> </script>
+	</div>
+
+
+
 </div>
 </main>
 

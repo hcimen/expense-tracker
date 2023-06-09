@@ -33,6 +33,7 @@ body{
   border: solid;
   border-width: 5px;
   line-height: 2;
+  font-family:'Sitka Text', Courier, monospace
 }
 
 .header a{
@@ -91,6 +92,7 @@ body{
   flex:auto;
   height: auto;
   width: 100%;
+  display: flexbox;
 }
 
 .addTransaction{
