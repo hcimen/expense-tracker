@@ -51,9 +51,9 @@ module.exports = {
     console.log(userId);  
     Transaction.find({ user_id: ObjectId(userId)}, (error, userTransactions) => {
       if (error) {
-        return error;
+        console.log(error);
       } else {
-        res.render('pages/overall', {
+        res.render('pages/transactions', {
           allTransactions: userTransactions
         });
       }
