@@ -53,7 +53,7 @@ module.exports = {
       if (error) {
         return error;
       } else {
-        res.render('pages/transactions', {
+        res.render('pages/overall', {
           allTransactions: userTransactions
         });
       }
