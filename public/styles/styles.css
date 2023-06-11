@@ -1,7 +1,8 @@
 
 :root {
     --midnight-green: #004452ff;
-    --caribbean-current: #00667aff;
+    --darker-caribbean-current: #005766;
+    --caribbean-current: #005766;
     --blue-munsell: #0088a3ff;
     --blue-green: #0096c7ff;
     --pacific-cyan: #00b4d8ff;
@@ -28,17 +29,15 @@ body{
   flex-direction: column;
   background-color: var(--lightest);
   color: var(--caribbean-current);
-  font-size: 3vw;
+  font-size: 4vw;
   border-color: var(--blue-green);
   border: solid;
   border-width: 5px;
-  line-height: 2;
-  font-family:'Sitka Text', Courier, monospace
+  font-family:'Sitka Text', Courier, monospace;
 }
 
 .header a{
   text-decoration:  none;
-  color: var(--caribbean-current);
 }
 
 .header .logo{
@@ -57,9 +56,13 @@ body{
 .headerLinks{
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly; 
-  font-size: 2.5vw;
+  justify-content: space-around;
+  font-size: 2vw;
   padding-left: 2%;
+}
+
+.navLink {
+  text-align: center;
 }
 
 .headerLinksNone{
@@ -70,6 +73,7 @@ body{
   display: flex;
   justify-content: flex-end;
   padding: 2%;
+  font-size: xx-large;
 }
 
 .mainBody{
@@ -93,6 +97,12 @@ body{
   height: auto;
   width: 100%;
   display: flexbox;
+  font-family: 'Sitka Text', Courier, monospace;
+}
+
+#graphExplanation{
+  display: flex;
+  flex-direction: row;
 }
 
 .addTransaction{
@@ -125,7 +135,7 @@ body{
   height: 4vw;
   width: 20vw;
   background-color: var(--blue-munsell);
-  margin-left: 55%;
+  margin-left: auto;
   color: #ffffff;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bolder;
@@ -137,34 +147,94 @@ body{
   width: 100%;
 }
 
+.loginRegister{
+  font-size: 3vw;
+  text-align: center;
+  background-color: white;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  border-color: var(--caribbean-current);
+  border: solid;
+  place-items: center;
+}
+
+.loginRegister input[type=text], [type=password]{
+  cursor: pointer;
+  height: 3vw;
+  width: 20vw;
+}
+
+.loginRegister p{
+  margin: 0;
+  padding: 2%;
+}
+
+.loginRegister button{
+  height: 4vw;
+  width: 40vw;
+  cursor: pointer;
+  font-size: 2vw;
+  background-color: var(--caribbean-current);
+  color: var(--lightest);
+}
+
+.loginRegister a{
+  color: var(--lightest);
+}
+
+.loginRegister a:link, a:visited{
+  color: var(--caribbean-current);
+  text-decoration: none;
+  cursor: help;
+  list-style-type: none;
+}
+
+.loginRegister a:hover, .loginRegister a:active {
+  color: var(--caribbean-current);
+  background-color: var(--vivid-sky-blue);
+  list-style-type: square;
+}
+
+.loginRegister a{
+  color: white;
+}
+
+.loginRegister img{
+  width: 20px;
+  height: 20px;
+}
+
 .footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  background-color: var(--light-cyan);
-  color: var(--caribbean-current);
-  font-size: 2vw;
-  border-color: var(--blue-green);
-  border: solid;
-  border-width: 5px;
   padding-left: 3%;
   padding-top: 1%;
   padding-right: 15%;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  font-family:'Sitka Text', Courier, monospace;
+  background-color: var(--lightest);
+  color: var(--caribbean-current);
+  font-size: 2vw;
+  border-color: var(--blue-green);
+  border: solid;
+  border-width: 5px;
+  font-family:'Sitka Text', Courier, monospace;
 }
 
-
-footer a:link, a:visited{
-  color: var(--blue-munsell);
+.footer a:link, .footer a:visited{
+  color: var(--caribbean-current);
   text-decoration: none;
   cursor: help;
   list-style-type: none;
 }
 
-footer a:hover, a:active {
+.footer a:hover, .footer a:active {
   color: var(--caribbean-current);
   background-color: var(--vivid-sky-blue);
   list-style-type: square;
