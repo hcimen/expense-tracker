@@ -54,8 +54,8 @@ module.exports = {
     
   transactions: (req, res) => {
    /*  if (req.isAuthenticated()) { */
-    /* const userId = req.user.id;
-    console.log(userId);  */
+    const userId = req.user._id;
+    console.log(userId); 
       Transaction.find({}, (error, userTransactions) => {
         if (error) {
           console.log(error);
