@@ -62,11 +62,13 @@ module.exports = {
         } else {
           res.render('pages/transactions', {
             allTransactions: userTransactions,
-            isAuthenticated: req.isAuthenticated(),
+            /* isAuthenticated: req.isAuthenticated(), */
           });
         }
       });
-    }
+    } else {
+      res.redirect('/user/register');
+    } 
   },
 
   editTransaction: (req, res) => {
