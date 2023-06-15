@@ -23,57 +23,64 @@
 		<script src="/scripts/largeGraph.js"> </script>
 	</div>
 
-  <div class="addTransaction" id="addTransaction"> Add Quick Transaction <br>
-	<form action="#">
+	<div class="addTransaction" id="addTransactionMain"> 
+		<p>Add Transaction</p>
+		<form action="/user/addTransaction?_method=POST" method="POST">
+					
+			<div class="addBoxes">
+				<label for="date"> Date </label> <br><br>
+				<input type="date" id="date" name="date" value="01.01.2023"><br><br>
+			</div>
+			
+			<div class="addBoxes">
+				<label for="description"> Description </label> <br><br>
+				<input type="text" id="description" name="description" value="Description"><br><br>
+			</div>
 	
-		<p> 1. Please choose type of transaction </p>
-		<input type="radio" id="income" name="expenseType" value="income">
-		<label for="income">Income</label><br>
-		<input type="radio" id="expense" name="expenseType" value="expense">
-		<label for="expense">Expense</label><br>
-		<input type="radio" id="transfer" name="expenseType" value="transfer">
-		<label for="transfer">Transfer Between Accounts </label><br><br>
-
-		<div style="display: flex; align-items: center;">
-			<label style="color: var(--midnight-green);" for="amount">2. Transaction Amount:</label>
-			<input type="number" id="amount" name="amount" value="">
-		</div>
-		  
-		<!-- <p> 2. Transaction Amount: </p> <span>
-		<input type="number" id="amount" name="amount" value=""><br></span>
-		<label for="amount"></label> -->
-
-		<p> 3. Please choose account for transaction </p>
-		<input type="radio" id="credit1" name="account" value="credit1">
-		<label for="credit1"> Credit Card </label><br>
-		<input type="radio" id="saving1" name="account" value="saving1">
-		<label for="saving1">Savings Account</label><br>
-		<input type="radio" id="checking1" name="account" value="checking1">
-		<label for="checking1">Checking Account </label><br><br>
-
-		<p> 4. Withdraw or Deposit Fund </p>
-		<input type="radio" id="withdraw" name="withdrawOrDeposit" value="withdraw">
-		<label for="withdraw">Withdraw (-) </label><br>
-		<input type="radio" id="deposit" name="withdrawOrDeposit" value="deposit">
-		<label for="deposit">Deposit (+) </label><br>
-
-		<p> 5. Choose a category for your transaction </p>
-		<input type="checkbox" id="housing" name="category1" value="housing">
-		<label for="housing"> Housing </label><br>
-		<input type="checkbox" id="transportation " name="category2" value="transportation">
-		<label for="transportation"> Transportation</label><br>
-		<input type="checkbox" id="grocery" name="category3" value="grocery">
-		<label for="grocery"> Grocery</label><br>
-		<input type="checkbox" id="utilities" name="category4" value="utilities">
-		<label for="utilities"> Utilities </label><br>
-		<input type="checkbox" id="insurance " name="category5" value="insurance">
-		<label for="insurance"> Insurance</label><br>
-		<input type="checkbox" id="health" name="category6" value="health">
-		<label for="health"> Medical & Healthcare </label><br>
-
-		<input type="submit" value="SUBMIT">
-	  </form> 
-  </div>
+			<div class="addBoxes">
+				<label for="amount">Amount</label> <br><br>
+				<input type="number" id="amount" name="amount" value=""><br><br>
+			</div>
+	
+			<div class="addBoxes">
+				<label for="transaction_type"> Type </label><br><br>
+				<select id="transaction_type" name="transaction_type">
+					<option value="Income"> Income </option>
+					<option value="Income"> Expense </option>
+				</select><br><br>
+			</div>
+	
+			<div class="addBoxes">
+				<label for="category"> Category</label><br><br>
+				<select id="category" name="category">
+					<option value="Auto & Transport"> Auto & Transport </option>
+					<option value="Bills & Utilities "> Bills & Utilities  </option>
+					<option value="Entertainment"> Entertainment </option>
+					<option value="Food & Dining"> Food & Dining  </option>
+					<option value="Health & Fitness"> Health & Fitness </option>
+					<option value="Home"> Home </option>
+				</select><br><br>
+			</div>
+	
+			<div class="addBoxes">
+				<label for="account_name"> Account Name</label><br><br>
+				<select id="account_name" name="account_name">
+					<option value="Checking"> Checking </option>
+					<option value="Savings"> Savings  </option>
+					<option value="Credit Card"> Credit Card </option>
+				</select><br><br>
+			</div>
+	
+			<div class="addBoxes">
+				<label for="notes"> Notes </label> <br><br>
+				<input type="text" id="notes" name="notes" value="Notes"> <br><br>
+			</div> <br><br><br>
+	
+			<div class="addBoxes">
+				<button class="addBoxesSubmit" type="submit">SUBMIT</button>
+			</div>
+		</form> <br><br>
+	</div>
 
 </main>
 

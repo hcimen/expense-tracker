@@ -1,0 +1,70 @@
+<%- include('../partials/header') -%>
+
+<%- include('../partials/navigation') -%>
+
+
+<div class="addTransaction" id="editTransaction"> <p>Edit Transactions </p>
+
+		<form action="/user/update/<%= transaction._id %>?_method=PUT" method="POST">
+
+			<input type="hidden" name="id" value="<%= transaction.id %>">
+			
+			<div class="addBoxes">
+			<label for="date">Date</label> <br>
+			<input type="date" name="date" id="date" value="<%= formattedDate %>">
+			</div>
+
+			<div class="addBoxes">
+			<label for="description">Description</label>
+			<input type="text" name="description" id="description" value="<%= transaction.description %>">
+			</div>
+
+			<div class="addBoxes">
+			<label for="amount">Amount</label> <br>
+			<input type="number" name="amount" id="amount" value="<%= transaction.amount %>">
+			</div>
+
+			<div class="addBoxes">
+			<label for="transaction_type">Type</label> <br>
+			<select name="transaction_type" id="transaction_type">			
+			<option value="Income" <% if (transaction.transaction_type !== 'Expense') { %>selected<% } %>> Income </option>
+			<option value="Expense" <% if (transaction.transaction_type !== 'Income') { %>selected<% } %>> Expense </option>
+			</select>
+			</div>
+
+			<div class="addBoxes">
+			<label for="category">Category</label> <br>
+			<select id="category" name="category">
+				<option value="<%= transaction.category %>" selected> <%= transaction.category %> </option>
+				<option value="Auto & Transport"> Auto & Transport </option>
+				<option value="Bills & Utilities "> Bills & Utilities  </option>
+				<option value="Entertainment"> Entertainment </option>
+				<option value="Food & Dining"> Food & Dining  </option>
+				<option value="Health & Fitness"> Health & Fitness </option>
+				<option value="Home"> Home </option>
+			</select>
+			</div>
+
+			<div class="addBoxes">
+			<label for="account_name">Account Name</label> <br>
+			<select id="account_name" name="account_name">
+				<option value="Checking" <% if (transaction.account_name !== 'Credit Card' || 'Savings') { %>selected<% } %>> Checking </option>
+				<option value="Savings" <% if (transaction.account_name !== 'Credit Card' || 'Checking') { %>selected<% } %>> Savings </option>
+				<option value="Credit Card" <% if (transaction.account_name !== 'Savings' || 'Checking') { %>selected<% } %>> Credit Card </option>
+			</select>
+			</div>
+
+			<div class="addBoxes">
+			<label for="notes">Notes</label> <br>
+			<input type="text" name="notes" id="notes" value="<%= transaction.notes %>">
+			</div>
+			
+			<div class="addBoxes">
+			<button class="addBoxesSubmit" type="submit">Update</button>
+			</div>
+		</form>
+	<br><br>
+
+</div>
+
+<%- include('../partials/footer') -%>

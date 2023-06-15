@@ -16,19 +16,25 @@
 					<th> Type</th>
 					<th> Category </th>
 					<th> Account Name </th>
-					<th> Labels </th>
 					<th> Notes </th>
+					<th> Edit </th>
 				</tr>
 				<% for (entry of allTransactions) { %>
 				<tr style="border: 1px solid black;">
-					<td> <%= entry.date %> </td>
+					<td>
+						<% if (entry.date) { %>
+						  <%= entry.date.toLocaleDateString('en-US', {
+							  timeZone: 'Etc/GMT'
+							}) %>
+						<% } %>
+					</td>  
 					<td> <%= entry.description %> </td>
 					<td> <%= entry.amount %> </td>
 					<td> <%= entry.transaction_type %> </td>
 					<td> <%= entry.category %> </td>
 					<td> <%= entry.account_name %> </td>
-					<td> <%= entry.labels %> </td>
 					<td> <%= entry.notes %> </td>
+					<td><a href="/user/editTransaction/<%= entry._id %>">Edit</a></td>
 				</tr>
 				<% } %>	
 			</table>

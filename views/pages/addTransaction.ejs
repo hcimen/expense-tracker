@@ -2,49 +2,63 @@
 
 <%- include('../partials/navigation') -%>
 
-<div class="addTransaction" id="addTransactionMain"> Add Transaction <br><br>
+<div class="addTransaction" id="addTransactionMain"> 
+	<p>Add Transaction</p>
 	<form action="/user/addTransaction?_method=POST" method="POST">
+				
+		<div class="addBoxes">
+			<label for="date"> Date </label> <br><br>
+			<input type="date" id="date" name="date" value="01.01.2023" required><br><br>
+		</div>
 		
-		<label for="date">1. Date </label>
-		<input type="date" id="date" name="date" value="01.01.2023"> <br><br>
-		
-		<label for="description"> 2. Description </label>
-		<input type="text" id="description" name="description" value="Description"> <br><br>
-	
-		<label for="amount">3. Transaction Amount:</label>
-		<input type="number" id="amount" name="amount" value=""><br><br>
-	
-		<label for="transaction_type">4. Type of transaction</label><br>
-		<select id="transaction_type" name="transaction_type">
-			<option value="Income"> Income </option>
-			<option value="Income"> Expense </option>
-		</select><br><br>
+		<div class="addBoxes">
+			<label for="description"> Description </label> <br><br>
+			<input type="text" id="description" name="description" value="Description" required><br><br>
+		</div>
 
-		<label for="category">5. Category of transaction</label><br>
-		<select id="category" name="category">
-			<option value="Auto & Transport"> Auto & Transport </option>
-			<option value="Bills & Utilities "> Bills & Utilities  </option>
-			<option value="Entertainment"> Entertainment </option>
-			<option value="Food & Dining"> Food & Dining  </option>
-			<option value="Health & Fitness"> Health & Fitness </option>
-			<option value="Home"> Home </option>
-		</select><br><br>
+		<div class="addBoxes">
+			<label for="amount">Amount</label> <br><br>
+			<input type="number" id="amount" name="amount" value="" required><br><br>
+		</div>
 
-		<label for="account_name">6. Account Name</label><br>
-		<select id="account_name" name="account_name">
-			<option value="Checking"> Checking </option>
-			<option value="Savings"> Savings  </option>
-			<option value="Credit Card"> Credit Card </option>
-		</select><br><br>
-	
-		<label for="labels"> 7. Labels </label>
-		<input type="text" id="labels" name="labels" value="Labels"> <br><br>
+		<div class="addBoxes">
+			<label for="transaction_type"> Type </label><br><br>
+			<select id="transaction_type" name="transaction_type" required>
+				<option value="Income"> Income </option>
+				<option value="Income"> Expense </option>
+			</select><br><br>
+		</div>
 
-		<label for="notes"> 8. Notes </label>
-		<input type="text" id="notes" name="notes" value="Notes"> <br><br>
+		<div class="addBoxes">
+			<label for="category"> Category</label><br><br>
+			<select id="category" name="category" required>
+				<option value="Auto & Transport"> Auto & Transport </option>
+				<option value="Bills & Utilities "> Bills & Utilities  </option>
+				<option value="Entertainment"> Entertainment </option>
+				<option value="Food & Dining"> Food & Dining  </option>
+				<option value="Health & Fitness"> Health & Fitness </option>
+				<option value="Home"> Home </option>
+			</select><br><br>
+		</div>
 
-		<input type="submit" value="SUBMIT">
-	  </form> 
+		<div class="addBoxes">
+			<label for="account_name"> Account Name</label><br><br>
+			<select id="account_name" name="account_name" required>
+				<option value="Checking"> Checking </option>
+				<option value="Savings"> Savings  </option>
+				<option value="Credit Card"> Credit Card </option>
+			</select><br><br>
+		</div>
+
+		<div class="addBoxes">
+			<label for="notes"> Notes </label> <br><br>
+			<input type="text" id="notes" name="notes" value="Notes" required> <br><br>
+		</div> <br><br><br>
+
+		<div class="addBoxes">
+			<button class="addBoxesSubmit" type="submit">SUBMIT</button>
+		</div>
+	  </form> <br><br>
   </div>
 
   <%- include('../partials/footer') -%>

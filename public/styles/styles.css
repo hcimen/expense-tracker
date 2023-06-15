@@ -1,4 +1,3 @@
-
 :root {
     --midnight-green: #004452ff;
     --darker-caribbean-current: #005766;
@@ -17,12 +16,10 @@
   box-sizing: border-box;
 }
 
-
 body{
   text-align: left;
   background-color: var(--light-cyan);
 }
-
 
 .header {
   display: flex;
@@ -34,6 +31,7 @@ body{
   border: solid;
   border-width: 5px;
   font-family:'Sitka Text', Courier, monospace;
+  margin-bottom: 1%;
 }
 
 .header a{
@@ -44,7 +42,7 @@ body{
   display: flex;
   justify-content: center;
   width: 98%;
-  padding: 1%;
+  padding: 2%;
   text-align: center;
 }
 
@@ -58,7 +56,7 @@ body{
   flex-direction: column;
   justify-content: space-around;
   font-size: 2vw;
-  padding-left: 2%;
+  margin: 1%;
 }
 
 .navLink {
@@ -73,7 +71,7 @@ body{
   display: flex;
   justify-content: flex-end;
   padding: 2%;
-  font-size: xx-large;
+  font-size: 3vw;
 }
 
 .mainBody{
@@ -81,7 +79,7 @@ body{
   flex-direction: column;
 }
 
-.expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph, .addTransaction {
+.expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph {
   background-color: var(--lightest);
   color: var(--caribbean-current);
   font-size: 4vw;
@@ -89,67 +87,82 @@ body{
   border: solid;
   border-width: 5px;
   padding: 1%;
-  margin: 1%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  flex:auto;
   height: auto;
   width: 100%;
-  display: flexbox;
   font-family: 'Sitka Text', Courier, monospace;
 }
 
 #graphExplanation{
   display: flex;
   flex-direction: row;
+  font-size: 2.5vw;
 }
 
-.addTransaction{
-  font-size: 3vw;
-  text-align: left;
-  padding-left: 5%;
-  background-color: white;
-}
-
-.addTransaction p{
-  color: var(--midnight-green);
-}
-
-.addTransaction input[type=radio], [type=checkbox]{
-  cursor: pointer;
-  height: 2vw;
-  width: 2vw;
-}
-
-.addTransaction input[type=number]{
-  justify-content: space-around;
-  cursor: pointer;
-  height: 2vw;
-  width: 30vw;
-}
-
-.addTransaction input[type=submit]{
-  justify-content: space-around;
-  cursor: pointer;
-  height: 4vw;
-  width: 20vw;
-  background-color: var(--blue-munsell);
-  margin-left: auto;
-  color: #ffffff;
+.addTransaction {
   font-family: 'Courier New', Courier, monospace;
-  font-weight: bolder;
-  font-size: 2vw;
-}
-
-#addTransactionMain{
+  font-size: 3vw;
+  color: var(--darker-caribbean-current);
+  text-align: center;
+  background-color: var(--lightest);
   height: auto;
   width: 100%;
+  border-color: var(--blue-green);
+  border: solid;
+  border-width: 5px;
+  justify-content: center;
+}
+
+.addTransaction form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.addBoxes{
+  border: solid;
+  border-color: var(--blue-munsell);
+  border-radius: 0%;
+  border-width: 1px;
+  width: 80%;
+  cursor: pointer;
+  font-size: 3vw;
+}
+
+.addBoxes select, input[type=text],[type=date],[type=number] {
+  width: 60%;
+  height: 5vw;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.5vw;
+}
+
+.addBoxesSubmit{
+  cursor: pointer;
+  background-color: var(--darker-caribbean-current);
+  color:var(--lightest);
+  font-weight: bolder;
+  font-size: 3vw;
+  width: 100%;
+  height: 100%;
+}
+
+.loginPage {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  font-size: 2vw;
+  color: var(--darker-caribbean-current);
+  background-color: var(--lightest);
+  height: auto;
+  width: 100%;
+  border-color: var(--blue-green);
+  border: solid;
+  border-width: 5px;
 }
 
 .loginRegister{
-  font-size: 3vw;
-  text-align: center;
   background-color: white;
   margin-top: 5%;
   margin-left: auto;
@@ -164,6 +177,8 @@ body{
   cursor: pointer;
   height: 3vw;
   width: 20vw;
+  text-align: left;
+  font-size: 2vw;
 }
 
 .loginRegister p{
@@ -199,11 +214,6 @@ body{
 
 .loginRegister a{
   color: white;
-}
-
-.loginRegister img{
-  width: 20px;
-  height: 20px;
 }
 
 .footer {
@@ -252,10 +262,6 @@ body{
 
 }
 
-@media only screen and (min-width:480px) and (max-width: 767px) {
-
-}
-
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   
   .headerLinks{
@@ -272,6 +278,10 @@ body{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+  }
+
+  .addBoxes{
+    width: 45%;
   }
 
 }
@@ -299,6 +309,21 @@ body{
     width: 40%;
     height: auto;
 	}
+
+  .loginPage {
+    display: flex;
+    justify-content: center;
+  }
+
+  .loginRegister{
+    margin: 1%;
+    width: 45%;
+  }
+
+  .addBoxes{
+    width: 30%;
+  }
+
 }
 
 @media only screen and (min-width: 1200px) {
@@ -321,8 +346,22 @@ body{
   }
 
   .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph {
-    width: 48.5%;
+    width: 49.75%;
     height: auto;
 	}
+
+  .loginPage {
+    display: flex;
+    justify-content: center;
+  }
+
+  .loginRegister{
+    margin: 1%;
+    width: 45%;
+  }
+
+  .addBoxes{
+    width: 23%;
+  }
   
 }
