@@ -14,11 +14,9 @@ module.exports = {
   },
 
   addTransaction : (req, res) => {
-    if (req.isAuthenticated()) {
+   
     res.render('pages/addTransaction');
-    }else{
-      res.redirect("/user/register")
-    }
+   
   },
 
   create: (req, res) => {
@@ -50,7 +48,7 @@ module.exports = {
     
   transactions: (req, res) => {
       
-    Transaction.find({}, (error, userTransactions) => {
+    Transaction.find({ user_id: ObjectId(userId)}, (error, userTransactions) => {
         if (error) {
           console.log(error);
         } else {
