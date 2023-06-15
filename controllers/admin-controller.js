@@ -53,9 +53,10 @@ module.exports = {
   },
     
   transactions: (req, res) => {
-    /* if (req.isAuthenticated()) { */
-      const userId = req.user.id;
-      console.log(userId);  
+    const userId = req.user.id;
+    console.log(userId); 
+    if (req.isAuthenticated()) {
+       
       Transaction.find({ user_id: ObjectId(userId)}, (error, userTransactions) => {
         if (error) {
           console.log(error);
@@ -66,9 +67,9 @@ module.exports = {
           });
         }
       });
-    /* } else {
+    } else {
       res.redirect('/user/register');
-    }  */
+    } 
   },
 
   editTransaction: (req, res) => {
