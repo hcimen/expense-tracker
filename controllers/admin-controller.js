@@ -53,7 +53,7 @@ module.exports = {
   },
     
   transactions: (req, res) => {
-    if (req.isAuthenticated()) {
+   /*  if (req.isAuthenticated()) { */
     const userId = req.user.id;
     console.log(userId); 
       Transaction.find({}, (error, userTransactions) => {
@@ -62,13 +62,13 @@ module.exports = {
         } else {
           res.render('pages/transactions', {
             allTransactions: userTransactions,
-            isAuthenticated: req.isAuthenticated(),
+          /*   isAuthenticated: req.isAuthenticated(), */
           });
         }
       });
-    } else {
+    /* } else {
       res.redirect('/user/register');
-    } 
+    }  */
   },
 
   editTransaction: (req, res) => {
