@@ -61,7 +61,7 @@ module.exports = {
           console.log(error);
         } else {
           res.render('pages/transactions', {
-            allTransactions: userTransactions,
+            /* allTransactions: userTransactions, */
             /* isAuthenticated: req.isAuthenticated(), */
           });
         }
