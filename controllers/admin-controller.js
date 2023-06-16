@@ -71,7 +71,7 @@ module.exports = {
       });
     } else {
       console.log("transactions redirect to register" + req.isAuthenticated());
-      res.redirect('/user/register');
+      res.redirect('/user/transactions');
     }
   },
 
