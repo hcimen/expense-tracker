@@ -14,11 +14,7 @@ module.exports = {
   },
 
   addTransaction : (req, res) => {
-    if (req.isAuthenticated()) {
-    res.render('pages/addTransaction', { isAuthenticated: req.isAuthenticated() });
-    }else{
-      res.redirect("/user/register")
-    }
+    res.render('pages/addTransaction');
   },
 
   create: (req, res) => {
