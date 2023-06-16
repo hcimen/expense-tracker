@@ -54,7 +54,7 @@ module.exports = {
   },
     
   transactions: (req, res) => {
-      const userId = req.user.id; 
+      const userId = req.user._id; 
       Transaction.find({ user_id: ObjectId(userId)}, (error, userTransactions) => {
         if (error) {
           console.log(error);
