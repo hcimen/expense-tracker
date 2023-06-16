@@ -62,6 +62,7 @@ module.exports = {
         if (error) {
           console.log(error);
         } else {
+          console.log("transactions isAuthenticated" + req.isAuthenticated())
           res.render('pages/transactions', {
             allTransactions: userTransactions,
             isAuthenticated: req.isAuthenticated(),
@@ -69,6 +70,7 @@ module.exports = {
         }
       });
     } else {
+      console.log("transactions redirect to register" + req.isAuthenticated());
       res.redirect('/user/register');
     }
   },
