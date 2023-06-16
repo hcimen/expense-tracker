@@ -44,8 +44,6 @@ module.exports = {
           console.log(err);
           return res.redirect('/user/addTransaction');
         }
-        console.log('New transaction added:', newTransaction);
-      return res.redirect('/user/transactions');
     });
   } else {
     res.redirect('/user/register');
