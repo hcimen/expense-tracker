@@ -8,6 +8,9 @@ const findOrCreate = require('mongoose-findorcreate');
 const { ObjectId } = mongoose.Types;
 
 const userSchema = new Schema({
+  _id: {
+    type:ObjectId,
+  },
   username: {
     type: String,
   },
@@ -17,12 +20,6 @@ const userSchema = new Schema({
   googleId:{
     type:String,
   },
-  transactions: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Transaction',
-    },
-  ],
 }, { collection: 'users' });
 
 userSchema.plugin(passportLocalMongoose);
