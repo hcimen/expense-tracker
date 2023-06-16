@@ -5,11 +5,11 @@ const express = require('express');
 
 module.exports = {
     index: (req, res) => {
-       /*  if (req.isAuthenticated()) { */
+        if (req.isAuthenticated()) {
             res.redirect('/user/overall')
-       /*  }else{
+        }else{
             res.render('pages/index', { isAuthenticated: req.isAuthenticated() })
-        } */
+        }
     },
 
     google_get: passport.authenticate('google', {scope: ['openid', 'profile', 'email']}
