@@ -24,10 +24,12 @@ var ctx = document.getElementById('overall').getContext('2d');
 			},
 			options: {
 				responsive: true,
+				maintainAspectRatio: false,
 				title: {
 					display: true,
 					text: 'Expenses by Type'
-				}
+				},
+				
 			}
 		});
 
