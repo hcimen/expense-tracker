@@ -93,11 +93,11 @@ passport.serializeUser(function(user, cb){
   });
 });
 
-/* passport.deserializeUser(function(user, cb){
+passport.deserializeUser(function(user, cb){
   process.nextTick(function(){
       return cb (null, user);
   });
-}); */
+});
 
 module.exports = {
   User,
