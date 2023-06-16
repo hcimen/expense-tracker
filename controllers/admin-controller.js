@@ -15,10 +15,8 @@ module.exports = {
 
   addTransaction : (req, res) => {
     if (req.isAuthenticated()) {
-    console.log("addTransaction isAuthenticated" + req.isAuthenticated())
     res.render('pages/addTransaction', { isAuthenticated: req.isAuthenticated() });
     }else{
-      console.log("redirect to register" + req.isAuthenticated())
       res.redirect("/user/register")
     }
   },
@@ -57,12 +55,11 @@ module.exports = {
   transactions: (req, res) => {
     if (req.isAuthenticated()) {
       const userId = req.user.id;
-      console.log("userId is = " + userId);  
+      console.log(userId);  
       Transaction.find({ user_id: ObjectId(userId)}, (error, userTransactions) => {
         if (error) {
           console.log(error);
         } else {
-          console.log("transactions isAuthenticated" + req.isAuthenticated())
           res.render('pages/transactions', {
             allTransactions: userTransactions,
             isAuthenticated: req.isAuthenticated(),
@@ -70,11 +67,7 @@ module.exports = {
         }
       });
     } else {
-      console.log("transactions redirect to register" + req.isAuthenticated());
-      res.render('pages/transactions', {
-        allTransactions: userTransactions,
-        isAuthenticated: req.isAuthenticated(),
-      });
+      res.redirect('/user/register');
     }
   },
 
@@ -82,8 +75,10 @@ module.exports = {
     const { _id } = req.params;
     Transaction.findById(_id)
       .then(foundTransaction => {
+        console.log(foundTransaction);
         const dateFromMongoDB = moment(foundTransaction.date);
         const formattedDate = dateFromMongoDB.format('YYYY-MM-DD');
+        console.log(formattedDate);
         res.render('pages/editTransactions', {
           transaction: foundTransaction,
           isAuthenticated: req.isAuthenticated(),
@@ -108,6 +103,7 @@ module.exports = {
       account_name:account_name, 
       notes:notes })
       .then(foundTransaction => {
+        console.log(foundTransaction);
         const dateFromMongoDB = moment(foundTransaction.date);
         const formattedDate = dateFromMongoDB.format('YYYY-MM-DD');
         console.log(formattedDate);
@@ -129,6 +125,7 @@ module.exports = {
         password: password,
     });
     req.login(user, (error) => {
+        console.log(res);
         if(error) {
             res.redirect('/user/register')
         } else {
@@ -154,6 +151,7 @@ module.exports = {
             passport.authenticate('local')(req, res, () => {
                 console.log("registered user:" + user);
                 res.redirect('/user/overall');
+                console.log(req);
             })
         }
         })
