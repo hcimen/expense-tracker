@@ -67,10 +67,7 @@ module.exports = {
         }
       });
     } else {
-      res.render('pages/transactions', {
-        allTransactions: userTransactions,
-        isAuthenticated: req.isAuthenticated(),
-      });
+      res.redirect('/user/transactions')
     }
   },
 
@@ -90,7 +87,7 @@ module.exports = {
         })
         .catch(error => {
           console.log(error);
-          res.render('pages/editTransactions')
+          res.redirect('/user/editTransaction')
         });
   },
 
