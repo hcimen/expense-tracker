@@ -10,12 +10,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 const session = require('express-session');
 const passport = require('passport');
-
+const cookieParser = require('cookieParser');
 
 
 app.use(morgan('dev'));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(cookieParser());
 
 app.use(session({
   secret: process.env.SECRET_KEY,
