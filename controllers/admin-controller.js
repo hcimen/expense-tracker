@@ -151,7 +151,6 @@ module.exports = {
             passport.authenticate('local')(req, res, () => {
                 console.log("registered user:" + user);
                 res.redirect('/user/overall');
-                console.log(req);
             })
         }
         })
