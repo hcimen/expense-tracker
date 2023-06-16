@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 const session = require('express-session');
 const passport = require('passport');
-const cookieParser = require('cookieParser');
+const cookieParser = require('cookie-parser');
 
 
 app.use(morgan('dev'));
