@@ -11,7 +11,7 @@ app.use(express.json());
 const session = require('express-session');
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
-const { CyclicSessionStore } = require("@cyclic.sh/session-store");
+
 
 app.use(morgan('dev'));
 app.set('view engine', 'ejs');
@@ -20,7 +20,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 
 app.use(session({
-  store: new CyclicSessionStore(),
   secret: process.env.SECRET_KEY,
   saveUninitialized:true,
   cookie: { maxAge: 24 * 60 * 60 * 1000 },
