@@ -17,7 +17,7 @@ module.exports = {
     if (req.isAuthenticated()) {
     res.render('pages/addTransaction', { isAuthenticated: req.isAuthenticated() });
     }else{
-      res.render('pages/addTransaction')
+      res.redirect("/user/register")
     }
   },
 
@@ -67,7 +67,7 @@ module.exports = {
         }
       });
     } else {
-      res.redirect('/user/transactions')
+      res.redirect('/user/register');
     }
   },
 
@@ -87,7 +87,6 @@ module.exports = {
         })
         .catch(error => {
           console.log(error);
-          res.redirect('/user/editTransaction')
         });
   },
 
