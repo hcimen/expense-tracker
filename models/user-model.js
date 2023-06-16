@@ -8,9 +8,6 @@ const findOrCreate = require('mongoose-findorcreate');
 const { ObjectId } = mongoose.Types;
 
 const userSchema = new Schema({
-  _id: {
-    type:ObjectId,
-  },
   username: {
     type: String,
   },
