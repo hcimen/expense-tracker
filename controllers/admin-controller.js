@@ -14,13 +14,12 @@ module.exports = {
   },
 
   addTransaction : (req, res) => {
-    res.render('pages/addTransaction', { isAuthenticated: req.isAuthenticated() })
-/*     if (req.isAuthenticated()) {
+    if (req.isAuthenticated()) {
     res.render('pages/addTransaction', { isAuthenticated: req.isAuthenticated() });
     }else{
       res.redirect("/user/register")
-    }*/
-  }, 
+    }
+  },
 
   create: (req, res) => {
     if (req.isAuthenticated()) {
@@ -54,7 +53,10 @@ module.exports = {
   },
     
   transactions: (req, res) => {
-      Transaction.find({ user_id: new ObjectId(req.user.id) }, (error, userTransactions) => {
+    if (req.isAuthenticated()) {
+      const userId = req.user.id;
+      console.log(userId);  
+      Transaction.find({ user_id: ObjectId(userId)}, (error, userTransactions) => {
         if (error) {
           console.log(error);
         } else {
@@ -64,6 +66,9 @@ module.exports = {
           });
         }
       });
+    } else {
+      res.redirect('/user/register');
+    }
   },
 
   editTransaction: (req, res) => {
