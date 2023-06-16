@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 
 app.use(session({
-  store: new CyclicSessionStore(options),
+  store: new CyclicSessionStore(),
   secret: process.env.SECRET_KEY,
   saveUninitialized:true,
   cookie: { maxAge: 24 * 60 * 60 * 1000 },
