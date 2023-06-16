@@ -15,8 +15,10 @@ module.exports = {
 
   addTransaction : (req, res) => {
     if (req.isAuthenticated()) {
+    console.log("addTransaction isAuthenticated" + req.isAuthenticated())
     res.render('pages/addTransaction', { isAuthenticated: req.isAuthenticated() });
     }else{
+      console.log("redirect to register" + req.isAuthenticated())
       res.redirect("/user/register")
     }
   },
