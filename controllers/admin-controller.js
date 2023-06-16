@@ -67,7 +67,10 @@ module.exports = {
         }
       });
     } else {
-      res.render('pages/transactions');
+      res.render('pages/transactions', {
+        allTransactions: userTransactions,
+        isAuthenticated: req.isAuthenticated(),
+      });
     }
   },
 
