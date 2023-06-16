@@ -61,7 +61,7 @@ const transactionSchema = new Schema({
 
 const User = mongoose.model('User', userSchema, 'users');
 
-async function main() {
+/* async function main() {
   await mongoose.connect(`${process.env.DB_URL}`);
 
   mongoose.model('User', userSchema);
@@ -69,7 +69,7 @@ async function main() {
   await mongoose.model('User').findOne();
 };
 
-main();
+main(); */
 
 const Transaction = mongoose.model('Transaction', transactionSchema, 'transactions');
 
@@ -93,11 +93,11 @@ passport.serializeUser(function(user, cb){
   });
 });
 
-passport.deserializeUser(function(user, cb){
+/* passport.deserializeUser(function(user, cb){
   process.nextTick(function(){
       return cb (null, user);
   });
-});
+}); */
 
 module.exports = {
   User,
