@@ -49,7 +49,6 @@ module.exports = {
   },
     
   transactions: (req, res) => {
-    if (req.isAuthenticated()) {
       const userId = req.user.id;
       console.log(userId);  
       Transaction.find({ user_id: ObjectId(userId)}, (error, userTransactions) => {
@@ -58,13 +57,9 @@ module.exports = {
         } else {
           res.render('pages/transactions', {
             allTransactions: userTransactions,
-            isAuthenticated: req.isAuthenticated(),
           });
         }
       });
-    } else {
-      res.redirect('/user/register');
-    }
   },
 
   editTransaction: (req, res) => {
