@@ -71,7 +71,10 @@ module.exports = {
       });
     } else {
       console.log("transactions redirect to register" + req.isAuthenticated());
-      res.redirect('/user/transactions');
+      res.render('pages/transactions', {
+        allTransactions: userTransactions,
+        isAuthenticated: req.isAuthenticated(),
+      });
     }
   },
 
