@@ -5,21 +5,24 @@ const moment = require('moment');
 const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
-  /* admin: (req, res) => {
+  admin: (req, res) => {
     res.render('pages/admin', { isAuthenticated: req.isAuthenticated() }) 
-  }, */
+  },
 
   overall: (req, res) => {
-    res.render('pages/overall') 
+    res.render('pages/overall', { isAuthenticated: req.isAuthenticated() }) 
   },
 
   addTransaction : (req, res) => {
-   
-    res.render('pages/addTransaction');
-   
+    if (req.isAuthenticated()) {
+    res.render('pages/addTransaction', { isAuthenticated: req.isAuthenticated() });
+    }else{
+      res.redirect("/user/register")
+    }
   },
 
   create: (req, res) => {
+    if (req.isAuthenticated()) {
       const { date, description, amount, transaction_type, category, account_name, labels, notes } = req.body;
       console.log("User ID is " + req.user.id);
       const formattedDate = moment(date, 'YYYY-MM-DD').format('MM-DD-YYYY');
@@ -44,19 +47,28 @@ module.exports = {
         console.log('New transaction added:', newTransaction);
       return res.redirect('/user/transactions');
     });
+  } else {
+    res.redirect('/user/register');
+  }
   },
     
   transactions: (req, res) => {
-      
-    Transaction.find({}, (error, userTransactions) => {
+    if (req.isAuthenticated()) {
+      const userId = req.user.id;
+      console.log(userId);  
+      Transaction.find({ user_id: ObjectId(userId)}, (error, userTransactions) => {
         if (error) {
           console.log(error);
         } else {
           res.render('pages/transactions', {
             allTransactions: userTransactions,
+            isAuthenticated: req.isAuthenticated(),
           });
         }
       });
+    } else {
+      res.redirect('/user/register');
+    }
   },
 
   editTransaction: (req, res) => {
@@ -69,6 +81,7 @@ module.exports = {
         console.log(formattedDate);
         res.render('pages/editTransactions', {
           transaction: foundTransaction,
+          isAuthenticated: req.isAuthenticated(),
           formattedDate: formattedDate,
           });
         })
@@ -102,7 +115,7 @@ module.exports = {
   },
 
   authorization: (req, res) => {
-    res.render('pages/register')
+    res.render('pages/register', { isAuthenticated: req.isAuthenticated() })
   },
 
   login:(req, res) => {
