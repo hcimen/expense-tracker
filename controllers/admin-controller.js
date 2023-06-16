@@ -57,7 +57,7 @@ module.exports = {
   transactions: (req, res) => {
     if (req.isAuthenticated()) {
       const userId = req.user.id;
-      console.log(userId);  
+      console.log("userId is = " + userId);  
       Transaction.find({ user_id: ObjectId(userId)}, (error, userTransactions) => {
         if (error) {
           console.log(error);
@@ -79,10 +79,8 @@ module.exports = {
     const { _id } = req.params;
     Transaction.findById(_id)
       .then(foundTransaction => {
-        console.log(foundTransaction);
         const dateFromMongoDB = moment(foundTransaction.date);
         const formattedDate = dateFromMongoDB.format('YYYY-MM-DD');
-        console.log(formattedDate);
         res.render('pages/editTransactions', {
           transaction: foundTransaction,
           isAuthenticated: req.isAuthenticated(),
@@ -107,7 +105,6 @@ module.exports = {
       account_name:account_name, 
       notes:notes })
       .then(foundTransaction => {
-        console.log(foundTransaction);
         const dateFromMongoDB = moment(foundTransaction.date);
         const formattedDate = dateFromMongoDB.format('YYYY-MM-DD');
         console.log(formattedDate);
@@ -129,7 +126,6 @@ module.exports = {
         password: password,
     });
     req.login(user, (error) => {
-        console.log(res);
         if(error) {
             res.redirect('/user/register')
         } else {
