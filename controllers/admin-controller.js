@@ -131,7 +131,7 @@ module.exports = {
         } else {
             passport.authenticate('local')(req, res, () => {
                 console.log("logged in user:" + user);
-                res.redirect('/user/overall');
+                res.redirect('/user/transactions');
             });
         }
         })
