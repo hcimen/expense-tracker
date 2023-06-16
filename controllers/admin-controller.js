@@ -125,7 +125,6 @@ module.exports = {
         password: password,
     });
     req.login(user, (error) => {
-        console.log(res);
         if(error) {
             console.log("req.login" + isAuthenticated());
             res.redirect('/user/register')
@@ -153,7 +152,6 @@ module.exports = {
             passport.authenticate('local')(req, res, () => {
                 console.log("registered user:" + user);
                 res.redirect('/user/overall');
-                console.log(req);
             })
         }
         })
