@@ -61,7 +61,7 @@ const transactionSchema = new Schema({
 
 const User = mongoose.model('User', userSchema, 'users');
 
-/* async function main() {
+async function main() {
   await mongoose.connect(`${process.env.DB_URL}`);
 
   mongoose.model('User', userSchema);
@@ -69,7 +69,7 @@ const User = mongoose.model('User', userSchema, 'users');
   await mongoose.model('User').findOne();
 };
 
-main(); */
+main();
 
 const Transaction = mongoose.model('Transaction', transactionSchema, 'transactions');
 
