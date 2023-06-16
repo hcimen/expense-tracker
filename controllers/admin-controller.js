@@ -14,12 +14,13 @@ module.exports = {
   },
 
   addTransaction : (req, res) => {
-    if (req.isAuthenticated()) {
+    res.render('pages/addTransaction', { isAuthenticated: req.isAuthenticated() })
+/*     if (req.isAuthenticated()) {
     res.render('pages/addTransaction', { isAuthenticated: req.isAuthenticated() });
     }else{
       res.redirect("/user/register")
-    }
-  },
+    }*/
+  }, 
 
   create: (req, res) => {
     if (req.isAuthenticated()) {
