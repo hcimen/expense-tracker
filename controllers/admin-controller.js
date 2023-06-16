@@ -127,10 +127,12 @@ module.exports = {
     req.login(user, (error) => {
         console.log(res);
         if(error) {
+            console.log("req.login" + isAuthenticated());
             res.redirect('/user/register')
         } else {
             passport.authenticate('local')(req, res, () => {
                 console.log("logged in user:" + user);
+                console.log("passport.authenticate('local')");
                 res.redirect('/user/overall');
             });
         }
