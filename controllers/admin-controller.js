@@ -50,7 +50,7 @@ module.exports = {
     
   transactions: (req, res) => {
       const userId = req.user.id;
-      console.log(userId);  
+      console.log(req.user);  
       Transaction.find({ user_id: ObjectId(userId)}, (error, userTransactions) => {
         if (error) {
           console.log(error);
@@ -122,7 +122,7 @@ module.exports = {
         } else {
             passport.authenticate('local')(req, res, () => {
                 console.log("logged in user:" + user);
-                console.log("passport.authenticate('local')");
+                console.log(req.user.id);  
                 res.redirect('/user/overall');
             });
         }
