@@ -50,16 +50,21 @@ module.exports = {
     
   transactions: (req, res) => {
       const user = req.user;
-      console.log(req.user);  
-      Transaction.find({ user_id: ObjectId(user.id)}, (error, userTransactions) => {
-        if (error) {
-          console.log(error);
-        } else {
-          res.render('pages/transactions', {
-            allTransactions: userTransactions,
-          });
-        }
-      });
+      console.log(req.user);
+      if(req.user){
+        Transaction.find({ user_id: ObjectId(user.id)}, (error, userTransactions) => {
+          if (error) {
+            console.log(error);
+          } else {
+            res.render('pages/transactions', {
+              allTransactions: userTransactions,
+            });
+          }
+        });
+      } else {
+        res.redirect('/user/overall')
+      } 
+    
   },
 
   editTransaction: (req, res) => {
