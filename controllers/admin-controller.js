@@ -1,5 +1,5 @@
 const { User, Transaction } = require('../models/user-model');
-const { Types: { ObjectId } } = require('mongoose');
+const { ObjectId } = require('mongoose').Types;
 const passport = require('passport');
 const moment = require('moment');
 const { v4: uuidv4 } = require('uuid');
@@ -14,7 +14,11 @@ module.exports = {
   },
 
   addTransaction : (req, res) => {
-    res.render('pages/addTransaction');
+    if (req.isAuthenticated()) {
+    res.render('pages/addTransaction', { isAuthenticated: req.isAuthenticated() });
+    }else{
+      res.redirect("/user/register")
+    }
   },
 
   create: (req, res) => {
@@ -49,22 +53,22 @@ module.exports = {
   },
     
   transactions: (req, res) => {
-      const user = req.user;
-      console.log(req.user);
-      if(req.user){
-        Transaction.find({ user_id: ObjectId(user.id)}, (error, userTransactions) => {
-          if (error) {
-            console.log(error);
-          } else {
-            res.render('pages/transactions', {
-              allTransactions: userTransactions,
-            });
-          }
-        });
-      } else {
-        res.redirect('/user/overall')
-      } 
-    
+    if (req.isAuthenticated()) {
+      const userId = req.user.id;
+      console.log(userId);  
+      Transaction.find({ user_id: ObjectId(userId)}, (error, userTransactions) => {
+        if (error) {
+          console.log(error);
+        } else {
+          res.render('pages/transactions', {
+            allTransactions: userTransactions,
+            isAuthenticated: req.isAuthenticated(),
+          });
+        }
+      });
+    } else {
+      res.redirect('/user/register');
+    }
   },
 
   editTransaction: (req, res) => {
@@ -121,13 +125,12 @@ module.exports = {
         password: password,
     });
     req.login(user, (error) => {
+        console.log(res);
         if(error) {
-            console.log("req.login" + isAuthenticated());
             res.redirect('/user/register')
         } else {
             passport.authenticate('local')(req, res, () => {
                 console.log("logged in user:" + user);
-                console.log(req.user.id);  
                 res.redirect('/user/overall');
             });
         }
@@ -148,6 +151,7 @@ module.exports = {
             passport.authenticate('local')(req, res, () => {
                 console.log("registered user:" + user);
                 res.redirect('/user/overall');
+                console.log(req);
             })
         }
         })
