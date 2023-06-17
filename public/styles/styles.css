@@ -59,6 +59,10 @@ body{
   margin: 1%;
 }
 
+#headerLinks .fa a:link, #headerLinks a:visited, #headerLinks .fa:hover, #headerLinks .fa:focus  {
+  color: var(--caribbean-current);
+} 
+
 .navLink {
   text-align: center;
 }
@@ -210,7 +214,7 @@ body{
   border-color: var(--caribbean-current);
   border: solid;
   place-items: center;
-}
+} 
 
 .loginRegister input[type=text], [type=password]{
   cursor: pointer;
