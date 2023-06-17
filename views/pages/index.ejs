@@ -4,54 +4,165 @@
 
 <main class="index" id="index">
 
-  <div class="expenseTypeGraph" id="graphExplanation">
-	<div>
-		<p>
-			Explanation 
-		</p>
+	<div class="indExplanation">
+		<p>The Expense Tracker website was created as a user-friendly alternative to confusing or complicated platforms.</p> 
+		
+		<p>	The goal is to provide a streamlined experience with; <br>
+			&#x2022 visual graphs - charts  and <br>
+			&#x2022 simplified data entry methods.
+		 </p>
 	</div>
-	<div class="expenseTypeGraph" >Expense Type Graph
-		<canvas id="expenseType" style="width:100%; max-height: fit-content;"></canvas>
-		<script src="/scripts/expenseType.js"> </script>
-  	</div>
+
+	<div class="graphExplanation" id="indexIncome2">Income vs Expenses
+		<canvas id="income-expenses" style="width:100%; max-height: fit-content;"></canvas>
+		<script src="/scripts/incomeVsExpenses.js"> </script>
+</div>
+
+  <div class="graphExplanation" id="indexExpense1">Expenses by Type	
+	<canvas id="expenseType" style="width:100%; max-height: fit-content;"></canvas> 
+	<script src="/scripts/expenseType.js"> </script>
   </div>
 
-	<div class="incomeVsExpenses" id="graphExplanation">
-		<div class="incomeVsExpenses"> Income vs Expenses <br>
-			<canvas id="income-expenses" style="width:100%; max-height: fit-content;"></canvas>
-			<script src="/scripts/incomeVsExpenses.js"> </script>
-		</div>
-		<div>
-			<p>
-				Explanation 
-			</p>
-		</div>
-	</div>
+  <div class="indExplanation">
+	<p>The Expense Tracker website has been designed to provide users with an interactive user experience, enabling them to gain a better understanding of their income and expense patterns. <br> <br> By utilizing a user-friendly interface and incorporating intuitive features, the financial data can be easily navigated and analyzed by users. </p> 
+</div>
 
-	<div class="overallExpenses" id="graphExplanation"> 
-		<div>
-			<p>
-				Explanation 
-			</p>
-		</div>
-		<div class="overallExpenses" >	Overall Expenses
-			<canvas id="overall" style="height:100%;"></canvas>
-			<script src="/scripts/overallExpenses.js">  </script>
-		</div>
+<div class="graphExplanation" id="indexIncome1" > Income vs Expenses
+	<canvas id="largeGraphic" style="width:100%; max-height: fit-content;"></canvas>
+	<script src="/scripts/largeGraph.js"> </script>
+</div>
+
+</div>
+
+	<div class="graphExplanation" id="indexExpense2"> Expenses by Type
+		<canvas id="overall" style="max-height: 75%;"></canvas>
+		<script src="/scripts/overallExpenses.js">  </script>
   	</div>
 
-	<div class="largeGraph" id="graphExplanation" > 
-		
-		<div class="largeGraph">Detailed Graph 
-			<canvas id="largeGraphic" style="width:100%; max-height: fit-content;"></canvas>
-			<script src="/scripts/largeGraph.js"> </script>
-		</div>
-		<div>
-			<p>
-				Explanation 
-			</p>
-		</div>
+	<div class="indExplanation">
+		<p> Another feature that enhances the user experience is the easy and straightforward data entry and updating process. <br> Users can effortlessly add transactions and make necessary updates without any hassle. <br> This simplified approach ensures that users can conveniently manage and maintain their financial records with ease. </p> 
 	</div>
+
+	<div class="addTransaction" id="addTransactionMain"> 
+		<p>Add Transaction</p>
+		<form action="#">
+					
+			<div class="addBoxes">
+				<label for="date"> Date </label> <br><br>
+				<input type="date" id="date" name="date" value="01.01.2023" required><br><br>
+			</div>
+			
+			<div class="addBoxes">
+				<label for="description"> Description </label> <br><br>
+				<input type="text" id="description" name="description" value="Description" required><br><br>
+			</div>
+	
+			<div class="addBoxes">
+				<label for="amount">Amount</label> <br><br>
+				<input type="number" id="amount" name="amount" value="" required><br><br>
+			</div>
+	
+			<div class="addBoxes">
+				<label for="transaction_type"> Type </label><br><br>
+				<select id="transaction_type" name="transaction_type" required>
+					<option value="Income"> Income </option>
+					<option value="Income"> Expense </option>
+				</select><br><br>
+			</div>
+	
+			<div class="addBoxes">
+				<label for="category"> Category</label><br><br>
+				<select id="category" name="category" required>
+					<option value="Auto & Transport"> Auto & Transport </option>
+					<option value="Bills & Utilities "> Bills & Utilities  </option>
+					<option value="Entertainment"> Entertainment </option>
+					<option value="Food & Dining"> Food & Dining  </option>
+					<option value="Health & Fitness"> Health & Fitness </option>
+					<option value="Home"> Home </option>
+				</select><br><br>
+			</div>
+	
+			<div class="addBoxes">
+				<label for="account_name"> Account Name</label><br><br>
+				<select id="account_name" name="account_name" required>
+					<option value="Checking"> Checking </option>
+					<option value="Savings"> Savings  </option>
+					<option value="Credit Card"> Credit Card </option>
+				</select><br><br>
+			</div>
+	
+			<div class="addBoxes">
+				<label for="notes"> Notes </label> <br><br>
+				<input type="text" id="notes" name="notes" value="Notes" required> <br><br>
+			</div> <br><br><br>
+	
+			<div class="addBoxes">
+				<button class="addBoxesSubmit" type="submit">SUBMIT</button>
+			</div>
+		  </form> <br><br>
+	  </div>
+
+	  <div class="addTransaction" id="editTransaction"> <p>Edit Transactions </p>
+
+		<form action=#">
+
+			<div class="addBoxes">
+			<label for="date">Date</label> <br>
+			<input type="date" name="date" id="date" value="2023-06-25">
+			</div>
+
+			<div class="addBoxes">
+			<label for="description">Description</label><br>
+			<input type="text" name="description" id="description" value="Trader Joes">
+			</div>
+
+			<div class="addBoxes">
+			<label for="amount">Amount</label> <br>
+			<input type="number" name="amount" id="amount" value="185">
+			</div>
+
+			<div class="addBoxes">
+			<label for="transaction_type">Type</label> <br>
+			<select name="transaction_type" id="transaction_type">			
+			<option value="Income"> Income </option>
+			<option value="Expense" selected> Expense </option>
+			</select>
+			</div>
+
+			<div class="addBoxes">
+			<label for="category">Category</label> <br>
+			<select id="category" name="category">
+				<option value="Auto & Transport"> Auto & Transport </option>
+				<option value="Bills & Utilities "> Bills & Utilities  </option>
+				<option value="Entertainment"> Entertainment </option>
+				<option value="Food & Dining" selected> Food & Dining  </option>
+				<option value="Health & Fitness"> Health & Fitness </option>
+				<option value="Home"> Home </option>
+			</select>
+			</div>
+
+			<div class="addBoxes">
+			<label for="account_name">Account Name</label> <br>
+			<select id="account_name" name="account_name">
+				<option value="Checking"> Checking </option>
+				<option value="Savings"> Savings </option>
+				<option value="Credit Card" selected> Credit Card </option>
+			</select>
+			</div>
+
+			<div class="addBoxes">
+			<label for="notes">Notes</label> <br>
+			<input type="text" name="notes" id="notes" value="return the yogurt">
+			</div>
+			
+			<div class="addBoxes">
+			<button class="addBoxesSubmit" type="submit">Update</button>
+			</div>
+		</form>
+	<br><br>
+
+</div>
+
 
  <!-- Comment before development-1 -->
 

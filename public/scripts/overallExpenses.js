@@ -24,12 +24,15 @@ var ctx = document.getElementById('overall').getContext('2d');
 			},
 			options: {
 				responsive: true,
-				maintainAspectRatio: false,
+				maintainAspectRatio: true,
+				aspectRatio: 2,
 				title: {
 					display: true,
-					text: 'Expenses by Type'
+					text: '(Pie Chart)'
 				},
-				
+				legend: {
+					position: 'left'
+				  }
 			}
 		});
 

@@ -5,7 +5,7 @@ data: {
   labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   datasets: [{
       label: 'Income',
-      data: [2200, 2500, 1800, 2000, 2200, 2300, 2400, 2100, 1700, 1900, 2800, 2200],
+      data: [2200, 2500, 1800, 2000, 2200, 2300, 2800, 2100, 1700, 1900, 2800, 2200],
       backgroundColor: 'rgba(54, 162, 235, 0.2)',
       borderColor: 'rgba(54, 162, 235, 1)',
       borderWidth: 2,
@@ -18,8 +18,8 @@ data: {
   }, {
       type: 'line',
       label: 'Difference',
-      data: [300, 900, 300, 100, 400, 800, 100, 1100, 800, 600, 300, 1300],
-      fill: true,
+      data: [300, 900, 300, -200, 400, 800, 1000, -400, 800, 600, 300, 1300],
+      fill: false,
       borderColor: 'rgba(75, 192, 192, 1)',
       borderWidth: 6,
       pointRadius: 3,
@@ -44,12 +44,12 @@ options: {
           position: 'left',
           id: 'y-axis-1'
       }, {
-          display: true,
+          display: false,
           position: 'right',
           id: 'y-axis-2',
           gridLines: {
               drawOnChartArea: true,
-          }
+          },
       }]
   }
 }

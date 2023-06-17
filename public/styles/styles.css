@@ -31,7 +31,7 @@ body{
   border: solid;
   border-width: 5px;
   font-family:'Sitka Text', Courier, monospace;
-  margin-bottom: 1%;
+  margin-bottom: 0.25%;
 }
 
 .header a{
@@ -55,7 +55,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  font-size: 2vw;
+  font-size: 2.5vw;
   margin: 1%;
 }
 
@@ -89,16 +89,54 @@ body{
   padding: 1%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0.25%;
   text-align: center;
-  height: auto;
+  height: 55vw;
   width: 100%;
   font-family: 'Sitka Text', Courier, monospace;
 }
 
-#graphExplanation{
+#index{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  font-size: 2.5vw;
+  column-gap: 0.005%;
+}
+
+.indExplanation{
+  background-color: var(--lightest);
+  color: var(--caribbean-current);
+  font-size: 2vw;
+  border-color: var(--blue-green);
+  border: solid;
+  border-width: 5px;
+  padding-left: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5%;
+  text-align: left;
+  height: 20vw;
+  width: 100%;
+  font-family: 'Sitka Text', Courier, monospace;
+}
+
+.graphExplanation{
+  font-size: 3vw;
+  margin-bottom: 0.5%;
+  background-color: var(--lightest);
+  color: var(--caribbean-current);
+  border-color: var(--blue-green);
+  border: solid;
+  border-width: 5px;
+  padding: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  height: 45%;
+  width: 100%;
+  font-family: 'Sitka Text', Courier, monospace;
+  font-size: 3vw;
+
 }
 
 .addTransaction {
@@ -113,6 +151,7 @@ body{
   border: solid;
   border-width: 5px;
   justify-content: center;
+  margin-bottom: 0.5%;
 }
 
 .addTransaction form{
@@ -283,6 +322,23 @@ body{
   .addBoxes{
     width: 45%;
   }
+  .graphExplanation{
+    font-size: 3vw;
+    margin-bottom: 0.5%;
+    background-color: var(--lightest);
+    color: var(--caribbean-current);
+    border-color: var(--blue-green);
+    border: solid;
+    border-width: 5px;
+    padding: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    height: 35%;
+    width: 100%;
+    font-family: 'Sitka Text', Courier, monospace;
+    font-size: 3vw;
+  }
 
 }
 
@@ -306,7 +362,7 @@ body{
   }
 
   .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph {
-    width: 40%;
+    width: 49%;
     height: auto;
 	}
 
@@ -322,6 +378,24 @@ body{
 
   .addBoxes{
     width: 30%;
+  }
+
+  .graphExplanation{
+    font-size: 3vw;
+    margin-bottom: 0.5%;
+    background-color: var(--lightest);
+    color: var(--caribbean-current);
+    border-color: var(--blue-green);
+    border: solid;
+    border-width: 5px;
+    padding: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    height: 45%;
+    width: 49.70%;
+    font-family: 'Sitka Text', Courier, monospace;
+    font-size: 3vw;
   }
 
 }
@@ -346,7 +420,7 @@ body{
   }
 
   .expenseTypeGraph, .overallExpenses, .incomeVsExpenses, .largeGraph {
-    width: 49.75%;
+    width: 49.85%;
     height: auto;
 	}
 
@@ -364,4 +438,22 @@ body{
     width: 23%;
   }
   
+  .graphExplanation{
+    font-size: 3vw;    
+    background-color: var(--lightest);
+    color: var(--caribbean-current);
+    border-color: var(--blue-green);
+    border: solid;
+    border-width: 5px;
+    padding: 2%;
+    margin-bottom: 0.25%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    height: 45%;
+    width: 49.5%;
+    font-family: 'Sitka Text', Courier, monospace;
+    font-size: 3vw;
+  
+  }
 }
