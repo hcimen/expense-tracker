@@ -5,10 +5,13 @@ const express = require('express');
 
 module.exports = {
     index: (req, res) => {
+        const data = require('../dummyTransactions.json')
         if (req.isAuthenticated()) {
             res.redirect('/user/overall')
         }else{
-            res.render('pages/index', { isAuthenticated: req.isAuthenticated() })
+            res.render('pages/index', { 
+                isAuthenticated: req.isAuthenticated(),
+                data:data })
         }
     },
 

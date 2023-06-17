@@ -121,6 +121,17 @@
     "notes": ""
   },
   {
+    "_id": 22,
+    "date": "2023-06-25",
+    "description": "Trader Joes",
+    "amount": 185,
+    "transaction_type": "expense",
+    "category": "Food & Dining",
+    "account_name": "credit",
+    "labels": [],
+    "notes": "return the yogurt"
+  },
+  {
     "_id": 12,
     "date": "2023-02-05",
     "description": "QRS Pharmacy",

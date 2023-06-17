@@ -14,30 +14,28 @@
 	</div>
 
 	<div class="graphExplanation" id="indexIncome2">Income vs Expenses
-		<canvas id="income-expenses" style="width:100%; max-height: fit-content;"></canvas>
-		<script src="/scripts/incomeVsExpenses.js"> </script>
-</div>
+			<canvas id="income-expenses" style="width:100%; max-height: fit-content;"></canvas>
+			<script src="/scripts/incomeVsExpenses.js"> </script>
+	</div>
 
-  <div class="graphExplanation" id="indexExpense1">Expenses by Type	
-	<canvas id="expenseType" style="width:100%; max-height: fit-content;"></canvas> 
-	<script src="/scripts/expenseType.js"> </script>
-  </div>
+	<div class="graphExplanation" id="indexExpense1">Expenses by Type	
+		<canvas id="expenseType" style="width:100%; max-height: fit-content;"></canvas> 
+		<script src="/scripts/expenseType.js"> </script>
+	</div>
 
-  <div class="indExplanation">
-	<p>The Expense Tracker website has been designed to provide users with an interactive user experience, enabling them to gain a better understanding of their income and expense patterns. <br> <br> By utilizing a user-friendly interface and incorporating intuitive features, the financial data can be easily navigated and analyzed by users. </p> 
-</div>
+	<div class="indExplanation">
+		<p>The Expense Tracker website has been designed to provide users with an interactive user experience, enabling them to gain a better understanding of their income and expense patterns. <br> <br> By utilizing a user-friendly interface and incorporating intuitive features, the financial data can be easily navigated and analyzed by users. </p> 
+	</div>
 
-<div class="graphExplanation" id="indexIncome1" > Income vs Expenses
-	<canvas id="largeGraphic" style="width:100%; max-height: fit-content;"></canvas>
-	<script src="/scripts/largeGraph.js"> </script>
-</div>
-
-</div>
+	<div class="graphExplanation" id="indexIncome1" > Income vs Expenses
+		<canvas id="largeGraphic" style="width:100%; max-height: fit-content;"></canvas>
+		<script src="/scripts/largeGraph.js"> </script>
+	</div>
 
 	<div class="graphExplanation" id="indexExpense2"> Expenses by Type
 		<canvas id="overall" style="max-height: 75%;"></canvas>
 		<script src="/scripts/overallExpenses.js">  </script>
-  	</div>
+	</div>
 
 	<div class="indExplanation">
 		<p> Another feature that enhances the user experience is the easy and straightforward data entry and updating process. <br> Users can effortlessly add transactions and make necessary updates without any hassle. <br> This simplified approach ensures that users can conveniently manage and maintain their financial records with ease. </p> 
@@ -100,9 +98,46 @@
 				<button class="addBoxesSubmit" type="submit">SUBMIT</button>
 			</div>
 		  </form> <br><br>
-	  </div>
+	</div>
 
-	  <div class="addTransaction" id="editTransaction"> <p>Edit Transactions </p>
+	<div class="addTransaction" id="addTransactionMain"> All Transactions <br>
+
+		<div >
+			<form action="#">
+				<table style="width:100%; font-size: large; border: solid; border-color:var(--caribbean-current); text-align: center;">
+					<tr>
+						<th> Date</th>
+						<th> Description </th>
+						<th> Amount</th>
+						<th> Type</th>
+						<th> Category </th>
+						<th> Account Name </th>
+						<th> Notes </th>
+						<th> Edit </th>
+					</tr>
+					<% for (entry of data) { %>
+					<tr style="border: 1px solid black;">
+						<td>
+							<% if (entry.date) { %>
+							  <%= entry.date %>
+							<% } %>
+						</td>  
+						<td> <%= entry.description %> </td>
+						<td> <%= entry.amount %> </td>
+						<td> <%= entry.transaction_type %> </td>
+						<td> <%= entry.category %> </td>
+						<td> <%= entry.account_name %> </td>
+						<td> <%= entry.notes %> </td>
+						<td><a href="/user/editTransaction/">Edit</a></td>
+					</tr>
+					<% } %>	
+				</table>
+			</form>
+		</div>
+	
+	</div>
+
+	<div class="addTransaction" id="editTransaction"> <p>Edit Transactions </p>
 
 		<form action=#">
 
@@ -162,6 +197,8 @@
 	<br><br>
 
 </div>
+
+
 
 
  <!-- Comment before development-1 -->
