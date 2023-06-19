@@ -59,7 +59,21 @@ body{
   margin: 1%;
 }
 
-#headerLinks .fa a:link, #headerLinks a:visited, #headerLinks .fa:hover, #headerLinks .fa:focus  {
+a{
+  color: var(--caribbean-current);
+  transition: font-size 0.5s;
+}
+
+.logo a:hover, .logo a:focus  {
+  font-size: 4.3vw;
+}
+
+.headerLinks a:hover, .headerLinks a:focus  {
+  font-size: 2.7vw;
+  background-color: var(--light-cyan);
+}
+
+a:link, a:visited, a:hover, a:focus  {
   color: var(--caribbean-current);
 } 
 
@@ -162,8 +176,61 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
 }
 
+.aboutme {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2vw;
+  color: var(--darker-caribbean-current);
+  text-align: center;
+  background-color: var(--lightest);
+  height: auto;
+  width: 100%;
+  border-color: var(--blue-green);
+  border: solid;
+  border-width: 5px;
+  justify-content: center;
+  margin-bottom: 0.5%;
+}
+
+table{
+  align-self: center;
+  width: 90%;
+  font-size: large; 
+  border: solid; 
+  border-color:var(--caribbean-current); 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.allTransactionSmallScreen{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3vw;
+  color: var(--darker-caribbean-current);
+  text-align: center;
+  background-color: var(--lightest);
+  height: auto;
+  width: 100%;
+  border-color: var(--blue-green);
+  border: solid;
+  border-width: 5px;
+  justify-content: center;
+  margin-bottom: 0.5%;
+}
+
+.allTransactionSmallScreen th {
+  width: 40%;
+  text-align: center;
+} 
+
+/* allTransactionsTable{
+  border: solid;
+  border-width: 12px;
+  border-color: #005766;
+}
+ */
 .addBoxes{
   border: solid;
   border-color: var(--blue-munsell);
@@ -259,14 +326,65 @@ body{
   color: white;
 }
 
-.footer {
+.contact{
+  background-color: white;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  border-color: var(--caribbean-current);
+  border: solid;
+  place-items: center;
+  padding: 2%;
+}
+
+.contact form{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   flex-wrap: wrap;
-  padding-left: 3%;
-  padding-top: 1%;
-  padding-right: 15%;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact input{
+  cursor: pointer;
+  height: 5vw;
+  width:70%;
+  text-align: left;
+  font-size: 2vw;
+  padding: 2%;
+  margin: 2%;
+}
+
+.contact textarea{
+  cursor: pointer;
+  height: 15vw;
+  width:70%;
+  text-align: left;
+  font-size: 2vw;
+  margin: 2%;
+}
+
+.contact label{
+  width: 20%;
+  text-align: left;
+}
+
+.contact button{
+  height: 4vw;
+  width: 40vw;
+  cursor: pointer;
+  font-size: 2vw;
+  background-color: var(--caribbean-current);
+  color: var(--lightest);
+  margin: 2%;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2%;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -277,7 +395,11 @@ body{
   border-color: var(--blue-green);
   border: solid;
   border-width: 5px;
-  font-family:'Sitka Text', Courier, monospace;
+  text-align: center;
+}
+
+footer div{
+  width: 33%;
 }
 
 .footer a:link, .footer a:visited{
@@ -294,18 +416,30 @@ body{
 }
 
 .socialMedia{
-  display: block;
-  justify-content: space-between;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 
-@media only screen and (max-width: 479px) {
+@media only screen and (min-width: 144px) and (max-width: 479px) {
 .headerDropDown{
   display: flex;}
-
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+#allTransactionMain{
+  display: none;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 839px) {
+  .headerDropDown{
+    display: flex;}
+  }
+  
+  #allTransactionMain{
+    display: none;
+  }
+
+@media only screen and (min-width: 840px) and (max-width: 1023px) {
   
   .headerLinks{
     display: flex;
@@ -342,6 +476,14 @@ body{
     width: 100%;
     font-family: 'Sitka Text', Courier, monospace;
     font-size: 3vw;
+  }
+  
+  #allTransactionMain{
+    display: none;
+  }
+
+  .allTransactionSmallScreen{
+    display: block;
   }
 
 }
@@ -396,10 +538,18 @@ body{
     margin-left: auto;
     margin-right: auto;
     text-align: left;
-    height: 45%;
+    height: auto;
     width: 49.70%;
     font-family: 'Sitka Text', Courier, monospace;
     font-size: 3vw;
+  }
+
+  #allTransactionMain{
+    display: block;
+  }
+
+  .allTransactionSmallScreen{
+    display: none;
   }
 
 }
@@ -459,5 +609,13 @@ body{
     font-family: 'Sitka Text', Courier, monospace;
     font-size: 3vw;
   
+  }
+
+  #allTransactionMain{
+    display: block;
+  }
+
+  .allTransactionSmallScreen{
+    display: none;
   }
 }

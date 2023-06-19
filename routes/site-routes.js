@@ -11,4 +11,11 @@ router.route('/auth/google')
 router.route('/auth/google/overall')
     .get(siteCtrl.google_redirect_get)
 
+router.route('/aboutme')
+    .get(siteCtrl.aboutme)
+
+router.route('/contact')
+    .get(siteCtrl.contact)
+    .post(siteCtrl.contactMessage)
+
     module.exports = router;

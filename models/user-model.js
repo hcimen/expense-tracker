@@ -67,6 +67,27 @@ main();
 
 const Transaction = mongoose.model('Transaction', transactionSchema, 'transactions');
 
+const contactSchema = new Schema({
+  name: {
+    type: String,
+  },
+  email: {
+    type: String,
+  },
+  username: {
+    type: String,
+  },
+  message: {
+    type: String,
+  },
+  googleId:{
+    type:String,
+  },
+}, { collection: 'contact' });
+
+const Contact = mongoose.model('Contact', contactSchema, 'contact');
+
+
 passport.use(User.createStrategy());
 
 passport.use(new GoogleStrategy({
@@ -96,5 +117,6 @@ passport.deserializeUser(function(user, cb){
 module.exports = {
   User,
   Transaction,
+  Contact,
   userSchema
 };

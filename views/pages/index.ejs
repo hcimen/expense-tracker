@@ -100,41 +100,77 @@
 		  </form> <br><br>
 	</div>
 
-	<div class="addTransaction" id="addTransactionMain"> All Transactions <br>
+	<div class="addTransaction" id="allTransactionMain"> <p> All Transactions </p>
+		<table class="allTransactionsTable">
+			<tr>
+				<th> Date</th>
+				<th> Description </th>
+				<th> Amount</th>
+				<th> Type</th>
+				<th> Category </th>
+				<th> Account Name </th>
+				<th> Notes </th>
+				<th> Edit </th>
+			</tr>
+			<% for (entry of data) { %>
+			<tr style="border: 1px solid black;">
+				<td>
+					<% if (entry.date) { %>
+						<%= entry.date %>
+					<% } %>
+				</td>  
+				<td> <%= entry.description %> </td>
+				<td> <%= entry.amount %> </td>
+				<td> <%= entry.transaction_type %> </td>
+				<td> <%= entry.category %> </td>
+				<td> <%= entry.account_name %> </td>
+				<td> <%= entry.notes %> </td>
+				<td><a href="/user/editTransaction/">Edit</a></td>
+			</tr>
+			<% } %>	
+		</table> <br>
+	</div>
 
-		<div >
-			<form action="#">
-				<table style="width:100%; font-size: large; border: solid; border-color:var(--caribbean-current); text-align: center;">
-					<tr>
-						<th> Date</th>
-						<th> Description </th>
-						<th> Amount</th>
-						<th> Type</th>
-						<th> Category </th>
-						<th> Account Name </th>
-						<th> Notes </th>
-						<th> Edit </th>
-					</tr>
-					<% for (entry of data) { %>
-					<tr style="border: 1px solid black;">
-						<td>
-							<% if (entry.date) { %>
-							  <%= entry.date %>
-							<% } %>
-						</td>  
-						<td> <%= entry.description %> </td>
-						<td> <%= entry.amount %> </td>
-						<td> <%= entry.transaction_type %> </td>
-						<td> <%= entry.category %> </td>
-						<td> <%= entry.account_name %> </td>
-						<td> <%= entry.notes %> </td>
-						<td><a href="/user/editTransaction/">Edit</a></td>
-					</tr>
-					<% } %>	
-				</table>
-			</form>
-		</div>
-	
+	<div class="allTransactionSmallScreen" id="allTransactionSmallScreen"> <p> All Transactions </p>
+		<% for (entry of data) { %>
+		<table class="allTransactionsTable"  style="text-align: left;">
+			  <tr>
+				<th>Date</th>
+				<td><% if (entry.date) { %>
+					<%= entry.date %>
+				<% } %></td>
+			  </tr>
+			  <tr>
+				<th>Description</th>
+				<td><%= entry.description %> </td>
+			  </tr>
+			  <tr>
+				<th> Amount</th>
+				<td><%= entry.amount %></td>
+			  </tr>
+			  <tr>
+				<th> Type</th>
+				<td><%= entry.transaction_type %></td>
+			  </tr> 
+			  <tr>
+				<th> Category </th>
+				<td><%= entry.category %></td>
+			  </tr> 
+			  <tr>
+				<th> Account Name </th>
+				<td>555 77 855</td>
+			  </tr> 
+			  <tr>
+				<th>Notes</th>
+				<td><%= entry.notes %></td>
+			  </tr>
+			  <tr>
+				<th>Edit</th>
+				<td><a href="/user/editTransaction/">Edit</a></td>
+			  </tr> 
+			  <% } %>
+			  	
+		</table><br>
 	</div>
 
 	<div class="addTransaction" id="editTransaction"> <p>Edit Transactions </p>
@@ -142,30 +178,30 @@
 		<form action=#">
 
 			<div class="addBoxes">
-			<label for="date">Date</label> <br>
-			<input type="date" name="date" id="date" value="2023-06-25">
+			<label for="date">Date</label> <br><br>
+			<input type="date" name="date" id="date" value="2023-06-25"><br>
 			</div>
 
 			<div class="addBoxes">
-			<label for="description">Description</label><br>
-			<input type="text" name="description" id="description" value="Trader Joes">
+			<label for="description">Description</label><br><br>
+			<input type="text" name="description" id="description" value="Trader Joes"><br>
 			</div>
 
 			<div class="addBoxes">
-			<label for="amount">Amount</label> <br>
-			<input type="number" name="amount" id="amount" value="185">
+			<label for="amount">Amount</label> <br><br>
+			<input type="number" name="amount" id="amount" value="185"><br>
 			</div>
 
 			<div class="addBoxes">
-			<label for="transaction_type">Type</label> <br>
+			<label for="transaction_type">Type</label> <br><br>
 			<select name="transaction_type" id="transaction_type">			
 			<option value="Income"> Income </option>
 			<option value="Expense" selected> Expense </option>
-			</select>
+			</select><br>
 			</div>
 
 			<div class="addBoxes">
-			<label for="category">Category</label> <br>
+			<label for="category">Category</label> <br><br>
 			<select id="category" name="category">
 				<option value="Auto & Transport"> Auto & Transport </option>
 				<option value="Bills & Utilities "> Bills & Utilities  </option>
@@ -173,25 +209,25 @@
 				<option value="Food & Dining" selected> Food & Dining  </option>
 				<option value="Health & Fitness"> Health & Fitness </option>
 				<option value="Home"> Home </option>
-			</select>
+			</select><br>
 			</div>
 
 			<div class="addBoxes">
-			<label for="account_name">Account Name</label> <br>
+			<label for="account_name">Account Name</label> <br><br>
 			<select id="account_name" name="account_name">
 				<option value="Checking"> Checking </option>
 				<option value="Savings"> Savings </option>
 				<option value="Credit Card" selected> Credit Card </option>
-			</select>
+			</select><br>
 			</div>
 
 			<div class="addBoxes">
-			<label for="notes">Notes</label> <br>
-			<input type="text" name="notes" id="notes" value="return the yogurt">
+			<label for="notes">Notes</label> <br><br>
+			<input type="text" name="notes" id="notes" value="return the yogurt"><br>
 			</div>
 			
 			<div class="addBoxes">
-			<button class="addBoxesSubmit" type="submit">Update</button>
+			<button class="addBoxesSubmit" type="submit">Update</button><br>
 			</div>
 		</form>
 	<br><br>

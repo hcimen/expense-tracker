@@ -2,11 +2,9 @@
 
 <%- include('../partials/navigation') -%>
 
-<div class="addTransaction" id="addTransactionMain"> All Transactions <br>
+<div class="addTransaction" id="addTransactionMain"> <p> All Transactions </p>
 
-	<div >
-		<form action="#">
-			<table style="width:100%; font-size: large; border: solid; border-color:var(--caribbean-current); text-align: center;">
+			<table style="width:95%; font-size: large; border: solid; border-color:var(--caribbean-current); text-align: center;">
 				<tr>
 					<th> Date</th>
 					<th> Description </th>
@@ -22,8 +20,7 @@
 					<td>
 						<% if (entry.date) { %>
 						  <%= entry.date.toLocaleDateString('en-US', {
-							  timeZone: 'Etc/GMT'
-							}) %>
+							  timeZone: 'Etc/GMT'}) %>
 						<% } %>
 					</td>  
 					<td> <%= entry.description %> </td>
@@ -34,11 +31,8 @@
 					<td> <%= entry.notes %> </td>
 					<td><a href="/user/editTransaction/<%= entry._id %>">Edit</a></td>
 				</tr>
-				<% } %>	
-			</table>
-		</form>
-	</div>
-
+				<% } %>
+			</table> <br>
 </div>
 
 <%- include('../partials/footer') -%>

@@ -1,0 +1,28 @@
+<%- include('../partials/header') -%>
+
+<%- include('../partials/navigation') -%>
+<div class="addTransaction">
+	
+	<div class="contact" id="contact">
+		<p>Contact / Question Form </p>
+		<form action="/contact" method="POST"> 
+
+			<label for="Name">Name: </label>
+			<input type="name" name="name" id="name" placeholder="Name & Surname">
+
+			<label for="email">Email: </label>
+			<input type="email" name="email" id="email" placeholder="Email"> <br> <br>  
+
+			<label for="username">Username: </label>
+			<input type="username" name="username" id="username" placeholder="Username">
+
+			<label for="message">Message: </label>
+			<textarea rows="8" cols="50" type="textarea" name="message" id="message" placeholder="Your Message"> 
+			</textarea>
+
+			<button type="submit" id="Submit"> Submit </button>
+		</form>
+	</div> <br>
+</div>
+
+<%- include('../partials/footer') -%>
