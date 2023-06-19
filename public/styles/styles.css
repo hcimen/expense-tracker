@@ -197,7 +197,7 @@ a:link, a:visited, a:hover, a:focus  {
 table{
   align-self: center;
   width: 90%;
-  font-size: large; 
+  font-size: 1.75vw; 
   border: solid; 
   border-color:var(--caribbean-current); 
   text-align: center;
