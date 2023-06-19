@@ -225,12 +225,14 @@ table{
   text-align: center;
 } 
 
-/* allTransactionsTable{
-  border: solid;
-  border-width: 12px;
-  border-color: #005766;
+.allTransactionsTable{
+  font-size: 2vw;
 }
- */
+
+#allTransactionSmallScreenTable{
+  font-size: 3vw;
+}
+
 .addBoxes{
   border: solid;
   border-color: var(--blue-munsell);
