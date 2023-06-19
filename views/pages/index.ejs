@@ -125,7 +125,7 @@
 				<td> <%= entry.category %> </td>
 				<td> <%= entry.account_name %> </td>
 				<td> <%= entry.notes %> </td>
-				<td><a href="/user/editTransaction/">Edit</a></td>
+				<td><a href="#">Edit</a></td>
 			</tr>
 			<% } %>	
 		</table> <br>
@@ -158,7 +158,7 @@
 			  </tr> 
 			  <tr>
 				<th> Account Name </th>
-				<td>555 77 855</td>
+				<td><%= entry.account_name %></td>
 			  </tr> 
 			  <tr>
 				<th>Notes</th>
@@ -166,7 +166,7 @@
 			  </tr>
 			  <tr>
 				<th>Edit</th>
-				<td><a href="/user/editTransaction/">Edit</a></td>
+				<td><a href="#">Edit</a></td>
 			  </tr> 
 			  <% } %>
 			  	
